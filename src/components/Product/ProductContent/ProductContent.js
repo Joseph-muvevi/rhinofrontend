@@ -47,9 +47,7 @@ const productContent = () => {
 									</p>
 								</div>
 							</div>
-						</div>
 
-						<div className="product-content-values-row">
 							<div className="product-content-values-item">
 								<div className="product-content-card-image-two"></div>
 								<div className="product-content-card-values-info">
@@ -102,8 +100,6 @@ const productContent = () => {
 								</div>
 							</div>
 
-							</div>
-							<div className="product-content-values-row">
 								<div className="product-content-values-item">
 									<div className="product-content-card-image-five"></div>
 									<div className="product-content-card-values-info">
