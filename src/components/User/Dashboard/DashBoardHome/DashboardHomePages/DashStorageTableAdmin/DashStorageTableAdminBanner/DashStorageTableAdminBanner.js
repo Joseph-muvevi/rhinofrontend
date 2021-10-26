@@ -9,7 +9,7 @@ const DashStorageTableAdminBanner = () => {
 					Dashboard storage admin table
 				</h3>
 				<p className="dash-storage-table-admin-banner-p">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+					Detailed information about all storage transaction done
 				</p>
 			</div>
 		</div>

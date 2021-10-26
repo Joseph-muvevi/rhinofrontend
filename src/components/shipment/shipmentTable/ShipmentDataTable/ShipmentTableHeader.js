@@ -9,7 +9,6 @@ import moment from "moment"
 
 const ShipmentTableHeader = ({ headers }) => {
   const header = headers;
-  console.log("This is from table header",header)
 
   const [date, setDate] = useState({})
 
@@ -19,7 +18,6 @@ const ShipmentTableHeader = ({ headers }) => {
 	  }
   }, [])
 
-  console.log("we are the headers", headers)
 
   const dateString = moment(date).format('MMMM Do YYYY') 
   console.log(dateString, "the date string")

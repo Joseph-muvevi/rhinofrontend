@@ -1,3 +1,8 @@
+/* parent */
+.shipping{
+    min-height: 100vh;
+}
+
 /* =======shipment banner========= */
 .shipment-banner{
     min-height: 30vh;
@@ -176,7 +181,7 @@
 
 .storage-table-headers-body-heading{
     color: white;
-    font-size: 18px;
+    font-size: 15px;
     text-align: left;
 }
 
@@ -325,7 +330,7 @@
     width: 100%; 
     text-align: center;
     background-color: grey;
-    font-size: 18px;
+    font-size: 15px;
     padding: 5px;
     border-radius: 5px;
 }
@@ -338,12 +343,12 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    min-height: 50vh;
+    min-height: 61.5vh;
 }
 
 .track-type-h3{
     color: white;
-    font-size: 18px;
+    font-size: 15px;
     font-family: Monda;
 }
 

@@ -196,7 +196,7 @@ const AirFooter = () => {
 			</div>
 			<div className="air-footer-bottom">
 				<FontAwesomeIcon icon={faCopyright} />
-				Copyrigh Rhinojon Prime Metals 2021
+				Copyright Rhinojon Prime Metals 2021
 			</div>
 		</div>
 	);

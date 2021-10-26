@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../shipment.css";
 import moment from "moment";
 
-const ShipmentTableContent = ({ array, dates }) => {
+const ShipmentTableContent = ({ array, filtered, dates }) => {
 	const content = array;
 
 	const [date, setDate] = useState("")
@@ -16,7 +16,6 @@ const ShipmentTableContent = ({ array, dates }) => {
 
 
 	const dateString = moment(date).format("dddd MMMM Do YYYY");
-	console.log(dateString)
 	// console.log(dateString, "the date string")
 
 	return (
@@ -26,7 +25,6 @@ const ShipmentTableContent = ({ array, dates }) => {
 			content.createdAt !== content.date ? (
 				): <p>There is nothin here</p>
 			} */}
-				{console.log("And the date is", date)	}
 
 				{	
 					listItem.length <= 1 ? listItem.map ( 
@@ -55,7 +53,7 @@ const ShipmentTableContent = ({ array, dates }) => {
 								<span className="shipment-header-phone-only">
 									No: 
 								</span>
-								{array ? array.length : null}
+								{filtered  ? filtered.length : null}
 							</p>
 							<p className="shipment-content-table-content-topic-date">
 								<span className="shipment-header-phone-only">

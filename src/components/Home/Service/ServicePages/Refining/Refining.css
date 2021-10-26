@@ -1,5 +1,5 @@
 .refinery-banner{
-    height: 40vh;
+    height: 500px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../../../../assets/containership1.jpg);
     background-attachment: fixed;
     background-size: cover;
@@ -109,7 +109,7 @@
     justify-content:space-around;
     align-items: center;
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .refinery-content-bottom-card-One{
@@ -119,7 +119,7 @@
     background-color: #333232;
     color: black;
     margin-bottom: 20px;
-    border-radius: 2px;
+    border-radius: 5px;
     filter: drop-shadow(2px 4px 5px black)
 }
 
@@ -208,7 +208,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .f-logo{
@@ -264,7 +264,7 @@
     flex-direction: column;
     justify-content: center;
     color: white;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .refinery-footer-top-right{
@@ -273,7 +273,7 @@
     flex-direction: column;
     justify-content: center;
     color: white;
-    font-size: 18px;
+    font-size: 15px;
     /* color: black; */
 }
 

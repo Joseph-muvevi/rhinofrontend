@@ -15,7 +15,7 @@ p{
 
 label{
 	margin-bottom: 10px;
-	font-size: 18px;
+	font-size: 15px;
 	font-family: Monda;
 	font-weight: 300;
 	text-transform: capitalize;
@@ -26,7 +26,7 @@ input{
 	font-family: 'Monda', sans-serif;
 	padding: 6px;
 	width: 350px;
-	font-size: 18px;
+	font-size: 15px;
 	border-color: whitesmoke;
 	border-width: 0.6px;
 	box-shadow: 0;
@@ -44,7 +44,7 @@ select{
 	width: 370px;
 	font-family: 'Monda', sans-serif;
 	padding: 6px;
-	font-size: 18px;
+	font-size: 15px;
 	border-color: white;
 	border-width: 1;
 	border-radius: 5px;
@@ -55,7 +55,7 @@ select{
 
 option{
 	background-color: #202020;
-	border-radius: 2px;
+	border-radius: 5px;
 	box-shadow: 2px 4px 5px black;
 	color: rgb(153, 153, 153);
 }
@@ -65,7 +65,7 @@ textarea{
 	padding: 10px;
 	width: 500px;
 	height: 250px;
-	font-size: 18px;
+	font-size: 15px;
 	border-color: white;
 	border-width: 1;
 	border-radius: 5px;
@@ -86,7 +86,7 @@ button {
 	filter: drop-shadow(2px 3px 4px black);
 	color: white;
 	font-family: Monda;
-	font-size: 18px;
+	font-size: 15px;
 	margin-bottom: 10px;
 	text-transform: capitalize
 }
@@ -132,7 +132,7 @@ table td, table th {
 table thead tr {
 	height: 60px;
 	background: #000000;
-	font-size: 18px;
+	font-size: 15px;
 	font-family: Monda;
 	color: whitesmoke
 }
@@ -258,7 +258,7 @@ NavLink:focus{
 	color: white;
 	display: flex;
 	font-family: Monda;
-	font-size: 18px;
+	font-size: 15px;
 	margin-left: 5vw;
 	text-transform: capitalize;
 }

@@ -9,7 +9,7 @@ const DashProductShippedBanner = () => {
 					Product Shipped
 				</h3>
 				<p className="dash-product-quotation-admin-banner-p">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+					Detailed information about all products shipped
 				</p>
 			</div>
 		</div>

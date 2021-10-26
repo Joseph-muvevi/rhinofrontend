@@ -9,7 +9,7 @@ const DashShipmentQuotationBanner = () => {
 					Shipment Quotation
 				</h3>
 				<p className="dash-shipment-quotation-admin-banner-p">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+					Detailed information about all shipment quotations received from clients
 				</p>
 			</div>
 		</div>

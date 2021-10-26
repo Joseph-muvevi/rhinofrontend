@@ -8,11 +8,11 @@ import "./shipmentdatatable.css"
 
 const ShipmentCard = ({result, filtered}) => {
 
-	const [dateList, setDateList] = useState([])
+	// const [dateList, setDateList] = useState([])
 
 	let filter = filtered
 
-	let filteredDateArr 
+	// let filteredDateArr 
 
 	return (
 		<div className="shipment-card"> 
@@ -25,7 +25,7 @@ const ShipmentCard = ({result, filtered}) => {
 								Track Shipments
 							</h2>
 							<p className="track-shipment-top-p">
-								Our online results give you real time, dtailed progress 
+								Our online results give you real time, detailed progress 
 								as your shipment speeds through our logistics network.
 							</p>
 						</div>
@@ -37,19 +37,10 @@ const ShipmentCard = ({result, filtered}) => {
 							)
 						}
 						{
-							filter ? filter.map(
-								details => {
-									console.log()
-									// filteredDateArr.push(details.createdAt)
-									// dateList.push(details.createdAt)
-									// console.log("WE ARE THE DETAILS", filteredDateArr)
-								}
-							): console.log("hasnt mapped yet")
-						}
-						{
 							filter ? filter.map(filterResults => 
 									(<ShipmentTableContent 
 										array = {filterResults} 
+										filtered = {filtered}
 										results = {result} 
 										dates ={filterResults.createdAt}  /> )) 
 									: null
@@ -66,6 +57,7 @@ const ShipmentCard = ({result, filtered}) => {
 					</p>
 			}
 			</div>
+			{console.log("I am the result underneath track",filtered)}
 		</div>
 	)
 }

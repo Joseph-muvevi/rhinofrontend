@@ -32,7 +32,6 @@ const ShipmentTable = () => {
 	return (
 		<div className="shipping">
 			<Navbar />
-			<div style={{ height: "50px" }} className="shipment-table">
 				<form onSubmit={trackItem} className="shipping-table-form">
 					<input
 						type="text"
@@ -44,7 +43,6 @@ const ShipmentTable = () => {
 					/>
 					<button type="submit"> Search </button>
 				</form>
-			</div>
 			{shipment || shipment !== undefined ? (
 				<ShipmentCard
 					result={result}

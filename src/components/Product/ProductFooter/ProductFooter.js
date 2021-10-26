@@ -196,7 +196,7 @@ const Productfooter = () => {
 			</div>
 			<div className="product-footer-bottom">
 				<FontAwesomeIcon icon={faCopyright} />
-				Copyrigh Rhinojon Prime Metals 2021
+				 Copyright Rhinojon Prime Metals 2021
 			</div>
 		</div>
 	);

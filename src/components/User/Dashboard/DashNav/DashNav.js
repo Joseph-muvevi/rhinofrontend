@@ -1,15 +1,12 @@
 import React from "react";
-import { NavLink, Redirect } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faTable,
 	faUserTie,
 	faUsers,
 	faUserPlus,
 	faHouseUser,
 	faSignOutAlt,
-	faHome,
 } from "@fortawesome/free-solid-svg-icons";
 import "../dashboard.css";
 import logo from "../../../../assets/Rhino card logo - PNG.png";
@@ -18,12 +15,8 @@ const DashNav = () => {
 
 	const signout = () => {
 		localStorage.removeItem("token")
-		window.location.replace("http://localhost:3000/auth"); 
+		window.location.replace("https://rhinojohnfrontend.herokuapp.com/auth"); 
 	}
-
-	// const takemehome = () => {
-	// 	return <Redirect to="/"/>
-	// }
 
 	return (
 		<div className="dash-nav">
@@ -60,12 +53,6 @@ const DashNav = () => {
 						<p className="dash-nav-li-items-p">Register a User</p>
 					</div>
 				</HashLink>
-				{/* <HashLink onCLick={() => takemehome()} to="/"  className="dash-nav-li">
-					<div className="dash-nav-li-items">
-						<FontAwesomeIcon icon={faHome} />
-						<p className="dash-nav-li-items-p">Return Home</p>
-					</div>
-				</HashLink> */}
 				<HashLink onClick={() => signout()} to="/auth" className="dash-nav-li">
 					<div className="dash-nav-li-items">
 						<FontAwesomeIcon icon={faSignOutAlt} />

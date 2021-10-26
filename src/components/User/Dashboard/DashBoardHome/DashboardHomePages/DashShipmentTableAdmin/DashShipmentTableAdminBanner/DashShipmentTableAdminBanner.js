@@ -9,7 +9,7 @@ const DashShipmentTableAdminBanner = () => {
 					Dashboard shipment admin table
 				</h3>
 				<p className="dash-shipment-table-admin-banner-p">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+					Detailed information about all shipping transaction made
 				</p>
 			</div>
 		</div>

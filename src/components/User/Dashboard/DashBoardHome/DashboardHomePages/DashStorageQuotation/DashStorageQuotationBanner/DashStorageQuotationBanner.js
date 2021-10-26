@@ -9,7 +9,7 @@ const DashStorageQuotationBanner = () => {
 					Storage Quotation
 				</h3>
 				<p className="dash-storage-quotation-admin-banner-p">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+					Detailed information about all storage quotation received from our clients
 				</p>
 			</div>
 		</div>

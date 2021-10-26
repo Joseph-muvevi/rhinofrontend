@@ -5,12 +5,14 @@
 	background-color: black;
 	position: relative;
 	z-index: 30;
-	max-height: 10vh;
+	height: 70px;
+	padding: 0%;
 }
 
 .navbar-logo{
 	color: white;
 	width: 100px;
+	max-height: 70px;
 }
 
 .navbar-content{

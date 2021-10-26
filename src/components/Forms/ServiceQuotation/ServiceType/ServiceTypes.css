@@ -1,6 +1,6 @@
 /* =====service type banner====== */
 .service-type-banner{
-    height: 40vh;
+    height: 500px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../../../assets/cargoplane\ 1.jpg);
     background-attachment: fixed;
     background-size: cover;
@@ -27,7 +27,7 @@
 }
 
 .service-type-banner-p{
-    font-size: 18px;
+    font-size: 15px;
     color: white;
 }
 

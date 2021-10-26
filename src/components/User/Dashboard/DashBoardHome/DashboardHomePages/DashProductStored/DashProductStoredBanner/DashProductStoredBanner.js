@@ -9,7 +9,7 @@ const DashProductStoredBanner = () => {
 					Product Stored
 				</h3>
 				<p className="dash-product-stored-admin-banner-p">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+					Detailed information for all product stored in our storage facilities 
 				</p>
 			</div>
 		</div>

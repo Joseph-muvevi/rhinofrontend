@@ -50,8 +50,8 @@
 }
 
 .dash-nav-logo{
-	max-width: 200px;
-	margin: 20px;
+	width: 90%;
+	margin: 20px auto
 }
 
 .dash-nav-user-info{
@@ -119,7 +119,7 @@
 	justify-content: flex-start;
 	align-items: center;
 	margin: auto;
-	font-size: 18px;
+	font-size: 15px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 
@@ -213,7 +213,7 @@
 
 /* ========Dashboard Top cards============= */
 .dashboard-cards{
-	width: 70vw;
+	width: 78vw;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 30px;
@@ -221,9 +221,9 @@
 
 .dashboard-cards-container{
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
-	/* flex-wrap: wrap; */
+	flex-wrap: nowrap;
 	margin-bottom: 8px
 
 }
@@ -241,6 +241,7 @@
 	margin-bottom: 10px;
 	text-decoration: none;
 	color: white;
+	margin-right: 20px;
 }
 
 .dashboard-card-circle{
