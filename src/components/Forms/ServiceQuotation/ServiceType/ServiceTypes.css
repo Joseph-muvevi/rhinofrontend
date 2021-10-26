@@ -92,3 +92,10 @@
 .services-types-card-button{
     width: 200px
 }
+
+@media screen and (max-width: 900px) {
+    .service-types-cards-row{
+        display: flex;
+        flex-direction: column;
+    }
+}

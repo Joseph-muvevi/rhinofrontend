@@ -382,7 +382,7 @@
 @media screen and (max-width: 900px) {
     .tracktype-link-group{
         display: flex;
-        flex-direction: column
+        flex-direction: column;
     }
     .storage-table-headers-client{
         display: flex;

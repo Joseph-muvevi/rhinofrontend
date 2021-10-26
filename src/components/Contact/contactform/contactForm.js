@@ -2,7 +2,7 @@ import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./contactForm.css";
 import axios from "axios";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";

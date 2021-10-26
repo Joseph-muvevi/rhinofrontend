@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
+
 import ShipmentTableHeader from './ShipmentTableHeader'
 import ShipmentTableContent from './ShipmentTableContent'
-import moment from "moment"
+// import moment from "moment"
 // import "../../shipment.css"
 import "./shipmentdatatable.css"
 // import StorageTableHeader from '../StorageTable/StorageTableHeader'

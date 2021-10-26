@@ -7,7 +7,7 @@ const TrackType = () => {
 		<div className="track-type">
 			<div className="track-type-content">
 				<h3 className="track-type-h3">
-					Choose your tracking information
+					Choose your tracking type
 				</h3>
 				<div className="tracktype-link-group">
 					<Link to="/track-shipment" className="tracktype-link">
