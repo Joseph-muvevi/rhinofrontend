@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar'
 import "./contact.css"
 import ContactBanner from './contactBanner/contactBanner'
 import ContactForm from './contactform/contactForm'
+import Footer from "../Footer/footer"
 
 const Contact = () => {
     return (
@@ -10,6 +11,7 @@ const Contact = () => {
             <Navbar/>
             <ContactBanner/>
             <ContactForm/>
+            <Footer/>
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import "./App.css";
+import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/home";
 import About from "./components/About/about";
@@ -28,38 +29,40 @@ import Refining from "./components/Home/Service/ServicePages/Refining/Refining";
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        {/* <Navbar/> */}
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/products" component={Product} />
-          <Route path="/services" component={Service} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/auth" component={Auth} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/shipment" component={Shipment} />
-          <Route path="/quotation" component={Quotation} />
-          <Route path="/reset" component={Reset} />
-          <Route path="/services-logistics" component={Logistics} />
-          <Route path="/services-storage" component={Storage} />
-          <Route path="/services-customs" component={Brokerage} />
-          <Route path="/services-air" component={Air} />
-          <Route path="/services-land" component={Linkages} />
-          <Route path="/services-trade" component={Advisory} />
-          <Route path="/service-type" component={ServiceType} />
-          <Route path="/services-ocean" component={Ocean} />
-          <Route path="/services-refinery" component={Refining} />
-          <Route path="/product-quotation" component={ProductQuotation} />
-          <Route path="/storage-quotation" component={ServiceQuotation} />
-          <Route path="/logistics-quotation" component={LogisticsQuotation} />
-          <Route path="/track-shipment" component={ShipmentTable}/>
-          <Route path="/track-storage" component={StorageTable}/>
-          <Route component={NotFound} />
-        </Switch>
-      </Router>
-    </div>
+	<div className="App">
+	  <Router>
+		{/* <Navbar/> */}'
+		<React.Suspense fallback="Rhinojohn loading...">
+			<Switch>
+				<Route path="/" exact component={Home} />
+				<Route path="/about" component={About} />
+				<Route path="/products" component={Product} />
+				<Route path="/services" component={Service} />
+				<Route path="/contact" component={Contact} />
+				<Route path="/auth" component={Auth} />
+				<Route path="/dashboard" component={Dashboard} />
+				<Route path="/shipment" component={Shipment} />
+				<Route path="/quotation" component={Quotation} />
+				<Route path="/reset" component={Reset} />
+				<Route path="/services-logistics" component={Logistics} />
+				<Route path="/services-storage" component={Storage} />
+				<Route path="/services-customs" component={Brokerage} />
+				<Route path="/services-air" component={Air} />
+				<Route path="/services-land" component={Linkages} />
+				<Route path="/services-trade" component={Advisory} />
+				<Route path="/service-type" component={ServiceType} />
+				<Route path="/services-ocean" component={Ocean} />
+				<Route path="/services-refinery" component={Refining} />
+				<Route path="/product-quotation" component={ProductQuotation} />
+				<Route path="/storage-quotation" component={ServiceQuotation} />
+				<Route path="/logistics-quotation" component={LogisticsQuotation} />
+				<Route path="/track-shipment" component={ShipmentTable}/>
+				<Route path="/track-storage" component={StorageTable}/>
+				<Route component={NotFound} />
+			</Switch>
+		</React.Suspense>
+	  </Router>
+	</div>
   );
 }
 

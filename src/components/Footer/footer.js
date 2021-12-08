@@ -99,12 +99,8 @@ const Footer = () => {
 						<h3 className="footer-title">Contacts</h3>
 						<ul className="footer-ul">
 							<li className="footer-li">
-								<FontAwesomeIcon icon={faMapMarkerAlt} />{" "}
-								Riverside drive Nairobi, Kenya
-							</li>
-							<li className="footer-li">
-								<FontAwesomeIcon icon={faMapMarkerAlt} />
-								Addess 2
+								<FontAwesomeIcon icon={faMapMarkerAlt} /> Bosto
+								Rd Near Tangaza Karen Nairobi Kenya
 							</li>
 							<li className="footer-li">
 								<FontAwesomeIcon icon={faPhoneAlt} />
@@ -117,10 +113,6 @@ const Footer = () => {
 							<li className="footer-li">
 								<FontAwesomeIcon icon={faMailBulk} />
 								info@rhinojonprimemetals.com
-							</li>
-							<li className="footer-li">
-								<FontAwesomeIcon icon={faMailBulk} />
-								admin@rhinojonprimemetals.com
 							</li>
 							<li className="footer-li">
 								<FontAwesomeIcon icon={faMailBulk} />
