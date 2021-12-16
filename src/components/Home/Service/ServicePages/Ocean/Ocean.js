@@ -3,6 +3,7 @@ import Navbar from '../../../../Navbar/Navbar'
 import OceanBanner from './OceanBanner/OceanBanner'
 import OceanContent from './OceanContent/OceanContent'
 import OceanFooter from './OceanFooter/OceanFooter'
+import "./Ocean.css"
 
 const Ocean = () => {
 	return (
