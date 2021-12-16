@@ -1,6 +1,7 @@
 import "./App.css";
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Fallback from "./components/utilities/fallback/falllback"
 import {
 	LazyHome,
 	LazyAbout,
@@ -33,8 +34,8 @@ function App() {
   return (
 	<div className="App">
 	  <Router>
-		{/* <Navbar/> */}'
-		<React.Suspense fallback="Rhinojohn loading...">
+		{/* <Navbar/> */}
+		<React.Suspense fallback={<Fallback/>}>
 			<Switch>
 				<Route path="/" exact component={LazyHome} />
 				<Route path="/about" component={LazyAbout} />

@@ -9,42 +9,33 @@ table {
   margin: 0 auto;
   position: relative;
 }
-
 table * {
   position: relative;
 }
-
 table td, table th {
   padding-left: 9px;
 }
-
 table thead tr {
   height: 60px;
   background: #FFED86;
   font-size: 16px;
 }
-
 table tbody tr {
   height: 48px;
   border-bottom: 1px solid #E3F1D5;
 }
-
 table tbody tr:last-child {
   border: 0;
 }
-
 table td, table th {
   text-align: left;
 }
-
 table td.l, table th.l {
   text-align: right;
 }
-
 table td.c, table th.c {
   text-align: center;
 }
-
 table td.r, table th.r {
   text-align: center;
 }
@@ -93,15 +84,13 @@ table td.r, table th.r {
     content: "Box Type";
   }
 }
-
 body {
   background: #9BC86A;
-  font: 400 14px 'Calibri','Arial';
+  font: 400 14px "Calibri", "Arial";
   padding: 20px;
 }
 
 blockquote {
   color: white;
   text-align: center;
-}
-/*# sourceMappingURL=table.css.map */
+}/*# sourceMappingURL=table.css.map */
