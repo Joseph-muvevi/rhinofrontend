@@ -24,7 +24,6 @@ const DashboardCards = () => {
 			.get("https://rhinojohnbackend.herokuapp.com/api/logisticsrecords")
 			.then((res) => {
 				setLogData(res.data);
-				console.log(res);
 			})
 			.catch((err) => console.log(err));
 	};
@@ -34,7 +33,6 @@ const DashboardCards = () => {
 			.get("https://rhinojohnbackend.herokuapp.com/api/quotation")
 			.then((res) => {
 				setQuotation(res.data);
-				console.log(res);
 			})
 			.catch((err) => console.log(err));
 	};

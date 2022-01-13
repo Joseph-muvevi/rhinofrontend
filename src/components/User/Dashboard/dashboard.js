@@ -33,7 +33,6 @@ const Dashboard = () => {
 
 	// =============DONT DELETE=============
 	const tkt = localStorage.getItem("token")
-	console.log("my tkt of the dashboard is", tkt)
 
 
 
