@@ -2,15 +2,10 @@ import React from 'react'
 import "./AboutBanner.css"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import image1 from "../../../assets/container.jpg"
-import image2 from "../../../assets/warehouse1.jpg"
-import image3 from "../../../assets/cargoplane 1.jpg"
-import image4 from "../../../assets/sea 2.jpg"
-import image5 from "../../../assets/ship 3.jpg"
-import image6 from "../../../assets/miningtools.jpg"
+import { AboutBannerCarousel } from "../../../Utilities/frontend/data/about/AboutBannerCarousel";
+
 
 const AboutBanner = () => {
-    
 
     const settings = {
         showArrows: false,
@@ -49,24 +44,13 @@ const AboutBanner = () => {
 
         
     <Carousel className="about-image" id = "about-banner" {...settings} style={carouselSlides} >
-        <div>
-            <img className="about-banner-images" src={image1}  alt="Rhino john about sliders"/>
-        </div>
-        <div>
-            <img className="about-banner-images" src={image2}  alt="Rhino john about sliders"/>
-        </div>
-        <div>
-            <img className="about-banner-images" src={image3}  alt="Rhino john about sliders"/>
-        </div>
-        <div>
-            <img className="about-banner-images" src={image4}  alt="Rhino john about sliders"/>
-        </div>
-        <div>
-            <img className="about-banner-images" src={image5}  alt="Rhino john about sliders"/>
-        </div>
-        <div>
-            <img className="about-banner-images" src={image6} alt="Rhino john about sliders"/>
-        </div>
+        {
+            AboutBannerCarousel.map((carousel, index) => (
+                <div key = {index}>
+                    <img className="about-banner-images" src={carousel.image}  alt="Rhino john about sliders"/>
+                </div>
+            ))
+        }
     </Carousel>
 
     )
