@@ -129,6 +129,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Shipperfullnames</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="Shipper fullnames"
 								name="fullnames"
@@ -147,6 +148,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Shipper email</label>
 							<input
+								className="logistics-input-fields"
 								type="email"
 								placeholder="Shipper email"
 								name="email"
@@ -164,6 +166,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Shipper Company</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="Shipper Company"
 								name="company"
@@ -178,11 +181,11 @@ const LogisticsFormsContent = () => {
 								</div>
 							) : null}
 						</div>
-					</div>
-					<div className="logistics-quotation-small-inputs">
+					
 						<div className="logistics-quotation-small-input-group">
 							<label>Shipper Address</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="Shipper Address"
 								name="shipaddress"
@@ -198,11 +201,11 @@ const LogisticsFormsContent = () => {
 								</div>
 							) : null}
 						</div>
-					</div>
-					<div className="logistics-quotation-small-inputs">
+					
 						<div className="logistics-quotation-small-input-group">
-							<label>Consignee fullnames</label>
+							<label>Consignee ullnames</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="Consignee fullnames"
 								name="consignfullnames"
@@ -221,6 +224,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Consignee Email</label>
 							<input
+								className="logistics-input-fields"
 								type="email"
 								placeholder="Consignee Email"
 								name="consignemail"
@@ -239,6 +243,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Consignee company</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="Consignee company<"
 								name="consigncompany"
@@ -254,11 +259,11 @@ const LogisticsFormsContent = () => {
 								</div>
 							) : null}
 						</div>
-					</div>
-					<div className="logistics-quotation-small-inputs">
+					
 						<div className="logistics-quotation-small-input-group">
 							<label>Consignee Address</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="Consignee address here..."
 								name="consignaddress"
@@ -274,9 +279,6 @@ const LogisticsFormsContent = () => {
 								</div>
 							) : null}
 						</div>
-					</div>
-
-					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
 							<label>Weight unit</label>
 							<select
@@ -308,6 +310,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Weight</label>
 							<input
+								className="logistics-input-fields"
 								type="number"
 								placeholder="The weight of the item..."
 								name="weight"
@@ -351,12 +354,10 @@ const LogisticsFormsContent = () => {
 								</div>
 							) : null}
 						</div>
-					</div>
-
-					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
 							<label>Departure city</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="What is your city..."
 								name="departurecity"
@@ -375,6 +376,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Departure country</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="What is your country..."
 								name="departurecountry"
@@ -393,6 +395,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Arrival city</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="What is your city..."
 								name="arrivalcity"
@@ -411,6 +414,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Arrival country</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="What is your country..."
 								name="arrivalcountry"
@@ -429,6 +433,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>ID number</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="Your ID number..."
 								name="idno"
@@ -446,6 +451,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label> Pieces </label>
 							<input
+								className="logistics-input-fields"
 								type="number"
 								placeholder="pieces"
 								name="pieces"
@@ -460,12 +466,10 @@ const LogisticsFormsContent = () => {
 								</div>
 							) : null}
 						</div>
-					</div>
-
-					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
 							<label>Departure date</label>
 							<input
+								className="logistics-input-fields"
 								type="date"
 								placeholder="DEparture date..."
 								name="departuredate"
@@ -484,6 +488,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Time in</label>
 							<input
+								className="logistics-input-fields"
 								type="time"
 								placeholder="Time in..."
 								name="departuretime"
@@ -528,12 +533,10 @@ const LogisticsFormsContent = () => {
 								</div>
 							) : null}
 						</div>
-					</div>
-
-					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
 							<label>Arrival date</label>
 							<input
+								className="logistics-input-fields"
 								type="date"
 								placeholder="Arrival date..."
 								name="arrivaldate"
@@ -552,6 +555,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Comodity quality</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="Comodity quality..."
 								name="quality"
@@ -569,6 +573,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Track number</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="Track number"
 								name="trackno"
@@ -583,12 +588,10 @@ const LogisticsFormsContent = () => {
 								</div>
 							) : null}
 						</div>
-					</div>
-
-					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
 							<label>Arrival time</label>
 							<input
+								className="logistics-input-fields"
 								type="time"
 								placeholder="Arrival time, If not arrived leave blank"
 								name="arrivaltime"
@@ -606,6 +609,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Time events</label>
 							<input
+								className="logistics-input-fields"
 								type="time"
 								placeholder="Time events"
 								name="timeevents"
@@ -624,6 +628,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Unit</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="Unit eg bags"
 								name="unit"
@@ -638,12 +643,10 @@ const LogisticsFormsContent = () => {
 								</div>
 							) : null}
 						</div>
-					</div>
-
-					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
 							<label>Collected by</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="Colledted by"
 								name="collectedby"
@@ -662,6 +665,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Collector's phone number</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="Collector's phone number"
 								name="collectortel"
@@ -680,6 +684,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Collector's address</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="Collector's address"
 								name="collectoraddress"
@@ -695,12 +700,10 @@ const LogisticsFormsContent = () => {
 								</div>
 							) : null}
 						</div>
-					</div>
-
-					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
 							<label>Product</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="Product item"
 								name="product"
@@ -746,6 +749,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Is logistics completed</label>
 							<input
+								className="logistics-input-fields"
 								type="checkbox"
 								placeholder="Arrival time, If not arrived leave blank"
 								name="completed"
@@ -760,12 +764,10 @@ const LogisticsFormsContent = () => {
 								</div>
 							) : null}
 						</div>
-					</div>
-
-					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
 							<label>Current location</label>
 							<input
+								className="logistics-input-fields"
 								type="text"
 								placeholder="Current location"
 								name="currentlocation"
@@ -784,6 +786,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Current date</label>
 							<input
+								className="logistics-input-fields"
 								type="date"
 								placeholder="Current location"
 								name="currentdate"

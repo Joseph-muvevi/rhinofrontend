@@ -6,7 +6,6 @@ import { HashLink } from 'react-router-hash-link'
 const AdminLogisticsTableContent = ({data, length}) => {
 	const [id, setId] = useState("")
 	let info = data
-	console.log(info)
 
 	const handleSetId = () => {
 		setId(info._id)
@@ -17,7 +16,7 @@ const AdminLogisticsTableContent = ({data, length}) => {
 		handleSetId()
 	}, [])
 
-	console.log(id)
+	// console.log(id)
 
 
 	return (

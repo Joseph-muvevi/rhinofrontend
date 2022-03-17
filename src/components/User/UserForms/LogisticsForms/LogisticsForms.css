@@ -11,6 +11,7 @@
 
 .logistics-form-banner-content{
     max-width: 80vw;
+    background-color: blue;
     margin: auto;
     text-align: left;
     display: flex;
@@ -31,6 +32,12 @@
     color: white;
 }
 
+.logistics-quotation-small-input-group{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 @media screen and (max-width: 900px){
     .logistics-form-banner{
         height: 80vh;
@@ -39,9 +46,13 @@
 
 /* =========logistics quotation form========== */
 .logistics-quotation-form{
-    max-width: 80vw !important;
-    margin-left: 17.5vw;
+    background-color: red;
 }
+
+.logistics-quotation-form-content{
+    padding: 10px;
+}
+
 .logistics-form-form{
     min-height: 80vh;
     display: flex;
@@ -57,6 +68,7 @@
     margin: auto;
 }
 
+
 .the-logistics-form-form{
     display: flex;
     flex-direction: column;
@@ -65,11 +77,11 @@
     min-height: 75vh;
 }
 
-.logistics-form-small-inputs{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+.logistics-quotation-small-inputs{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+
 }
 
 .logistics-form-small-input-group{
@@ -79,10 +91,12 @@
 }
 
 
-@media (max-width: 900px){
+@media (max-width: 1000px){
     .logistics-quotation-form{
-        margin-left: 0px!important;
-        max-width: 100vw !important
+    }
+
+    .logistics-input-fields{
+        max-width: 30vw
     }
 
     .logistics-form-left{
@@ -93,11 +107,10 @@
         width: 90vw;
     }
 
-    .logistics-form-small-inputs{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    .logistics-quotation-small-inputs{
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr) !important;
     }
     .the-logistics-form-form{
         max-width: 90vw;

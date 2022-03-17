@@ -5,8 +5,8 @@ import AdminStorageTableHeaders from './AdminStorageTableHeaders'
 
 const AdminStorageContentTableCard = ({storage}) => {
     const storageItems = storage
-    const arrlength = storageItems.length
-    console.log("The array length",arrlength)
+    // const arrlength = storageItems.length
+    // console.log("The array length",arrlength)
 
     return (
         <div className="admin-storage-table-card">

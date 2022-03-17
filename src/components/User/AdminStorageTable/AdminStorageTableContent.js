@@ -1,23 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./adminstoragetable.css";
 
 const AdminStorageTableContent = ({ content, length }) => {
-	const [specificStorageItem, setSpecificStorageItem] = useState([""]);
+	// const [specificStorageItem, setSpecificStorageItem] = useState([""]);
 
 	const detail = content;
-	console.log("this is the result from table detail", detail);
-	console.log("this is the result from table length", length);
+	
 
 	return (
 		<div className="admin-storage-table-content">
 			<div className="admin-storage-unifier">
-				{detail
+				{/* {detail
 					? console.log(
 							"My uniques ID is",
 							"https://rhinojohnbackend.herokuapp.com/api/storageshipment",
 							detail._id
 					  )
-					: "No IDS yet"}
+					: "No IDS yet"} */}
 
 				<div className="admin-storage-table-content-content">
 					<div className="admin-storage-table-content-upper">
