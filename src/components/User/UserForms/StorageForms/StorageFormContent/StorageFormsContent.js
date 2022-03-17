@@ -14,6 +14,11 @@ const StorageFormsContent = () => {
 			company: "",
 			storagecity: "",
 			storagecountry: "",
+			shipaddress: "",
+			consignfullnames:"",
+			consignemail: "",
+			consigncompany: "",
+			consignaddress:"",
 			warehousetype: "",
 			weight: "",
 			weightunit: "",
@@ -26,9 +31,9 @@ const StorageFormsContent = () => {
 			trackno: "",
 			notes: "",
 			quality: "",
+			product: "",
 			idno: "",
 			packaging: "",
-			product: "",
 			collectedby: "",
 			collectoraddress: "",
 			collectortel: "",
@@ -40,11 +45,16 @@ const StorageFormsContent = () => {
 			company: Yup.string().required().min(3).max(100),
 			storagecity: Yup.string().required().min(3).max(50),
 			storagecountry: Yup.string().required().min(3).max(50),
+			shipaddress: Yup.string().required().min(3).max(50),
+			consignaddress: Yup.string().min(3).max(100).required(),
+			consignfullnames: Yup.string().min(3).max(100).required(),
+			consignemail: Yup.string().min(3).max(100).required(),
+			consigncompany: Yup.string().min(3).max(100).required(),
 			warehousetype: Yup.string().required().min(3).max(50),
-			weight: Yup.number().required().min(1).max(50000000),
+			weight: Yup.number().required().min(1).max(50000),
 			weightunit: Yup.string().required().min(1).max(100),
 			producttype: Yup.string().required().min(3).max(50),
-			pieces: Yup.number().required().min(1).max(50000000),
+			pieces: Yup.number().required().min(1).max(50000),
 			datein: Yup.string().required().min(3).max(100),
 			intime: Yup.string().required().min(3).max(100),
 			dateout: Yup.string().required().min(3).max(100),
@@ -58,18 +68,18 @@ const StorageFormsContent = () => {
 			idno: Yup.string().required().min(5).max(30),
 			packaging: Yup.string().required().min(3).max(100),
 			notes: Yup.string().required().min(10).max(100),
-			observation: Yup.string().min(0).max(2000),
+			observation: Yup.string().min(1).max(2000),
 		}),
 		onSubmit: (values, { resetForm }) => {
 			try {
 				axios
 					.post("https://rhinojohnbackend.herokuapp.com/api/storageshipment", values)
 					.then(res => console.log(res))
-					.catch((err) => console.log(err));
+					.catch((err) => console.log("Error from posting",err));
 				alert(JSON.stringify(values, null, 2));
 				resetForm({ values: "" });
 			} catch (err) {
-				console.log(err);
+				console.log("Could not post",err);
 			}
 		},
 	});
@@ -127,6 +137,66 @@ const StorageFormsContent = () => {
 								<div className="error">{formik.errors.company}</div>
 							) : null}
 						</div>
+						<div className="logistics-quotation-small-input-group">
+							<label> Cosignee's fullname</label>
+							<input
+								type="text"
+								placeholder="cosignee's full name"
+								name="consignfullnames"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.consignfullnames}
+								required
+							/>
+							{formik.touched.consignfullnames && formik.errors.consignfullnames ? (
+								<div className="error">{formik.errors.consignfullnames}</div>
+							) : null}
+						</div>
+						<div className="logistics-quotation-small-input-group">
+							<label> Cosignee email</label>
+							<input
+								type="text"
+								placeholder="consignee email"
+								name="consignemail"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.consignemail}
+								required
+							/>
+							{formik.touched.consignemail && formik.errors.consignemail ? (
+								<div className="error">{formik.errors.consignemail}</div>
+							) : null}
+						</div>
+						<div className="logistics-quotation-small-input-group">
+							<label> Cosignee Address</label>
+							<input
+								type="text"
+								placeholder="consignaddress"
+								name="consignaddress"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.consignaddress}
+								required
+							/>
+							{formik.touched.consignaddress && formik.errors.consignaddress ? (
+								<div className="error">{formik.errors.consignaddress}</div>
+							) : null}
+						</div>
+						<div className="logistics-quotation-small-input-group">
+							<label> Cosignee's Company </label>
+							<input
+								type="text"
+								placeholder="consignee's company"
+								name="consigncompany"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.consigncompany}
+								required
+							/>
+							{formik.touched.consigncompany && formik.errors.consigncompany ? (
+								<div className="error">{formik.errors.consigncompany}</div>
+							) : null}
+						</div>
 				
 						<div className="logistics-quotation-small-input-group">
 							<label>Weight unit</label>
@@ -163,6 +233,21 @@ const StorageFormsContent = () => {
 							/>
 							{formik.touched.weight && formik.errors.weight ? (
 								<div className="error">{formik.errors.weight}</div>
+							) : null}
+						</div>
+						<div className="logistics-quotation-small-input-group">
+							<label>Address</label>
+							<input
+								type="string"
+								placeholder="The address"
+								name="shipaddress"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.shipaddress}
+								required
+							/>
+							{formik.touched.shipaddress && formik.errors.shipaddress ? (
+								<div className="error">{formik.errors.shipaddress}</div>
 							) : null}
 						</div>
 						<div className="logistics-quotation-small-input-group">
