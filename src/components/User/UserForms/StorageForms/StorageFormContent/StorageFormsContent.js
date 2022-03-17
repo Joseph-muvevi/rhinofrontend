@@ -127,9 +127,7 @@ const StorageFormsContent = () => {
 								<div className="error">{formik.errors.company}</div>
 							) : null}
 						</div>
-					</div>
-
-					<div className="logistics-quotation-small-inputs">
+				
 						<div className="logistics-quotation-small-input-group">
 							<label>Weight unit</label>
 							<select
@@ -186,9 +184,7 @@ const StorageFormsContent = () => {
 								<div className="error">{formik.errors.producttype}</div>
 							) : null}
 						</div>
-					</div>
-
-					<div className="logistics-quotation-small-inputs">
+				
 						<div className="logistics-quotation-small-input-group">
 							<label>Storage city</label>
 							<input
@@ -234,9 +230,7 @@ const StorageFormsContent = () => {
 								<div className="error">{formik.errors.pieces}</div>
 							) : null}
 						</div>
-					</div>
-
-					<div className="logistics-quotation-small-inputs">
+				
 						<div className="logistics-quotation-small-input-group">
 							<label>Date in</label>
 							<input
@@ -292,9 +286,7 @@ const StorageFormsContent = () => {
 								<div className="error">{formik.errors.warehousetype}</div>
 							) : null}
 						</div>
-					</div>
-
-					<div className="logistics-quotation-small-inputs">
+				
 						<div className="logistics-quotation-small-input-group">
 							<label>Date out</label>
 							<input
@@ -340,8 +332,6 @@ const StorageFormsContent = () => {
 								<div className="error">{formik.errors.storetrackno}</div>
 							) : null}
 						</div>
-					</div>
-					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
 							<label>Quality</label>
 							<input
@@ -387,8 +377,6 @@ const StorageFormsContent = () => {
 								<div className="error">{formik.errors.idno}</div>
 							) : null}
 						</div>
-					</div>
-					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
 							<label>Collected by</label>
 							<input
@@ -433,8 +421,6 @@ const StorageFormsContent = () => {
 								<div className="error">{formik.errors.collectortel}</div>
 							) : null}
 						</div>
-					</div>
-					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
 							<label>Product</label>
 							<input
@@ -453,7 +439,7 @@ const StorageFormsContent = () => {
 					</div>
 
 					<div className="content-area-group">
-						<div className="contact-textarea">
+						<div className="contact-textarea-logistics">
 							<label>Description</label>
 							<textarea
 								type="text"
@@ -468,7 +454,7 @@ const StorageFormsContent = () => {
 							<div className="error">{formik.errors.notes}</div>
 							) : null}
 						</div>
-						<div className="contact-textarea">
+						<div className="contact-textarea-logistics">
 							<label>Observation</label>
 							<textarea
 								type="text"

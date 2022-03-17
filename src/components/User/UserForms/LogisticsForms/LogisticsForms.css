@@ -38,6 +38,12 @@
     align-items: flex-start;
 }
 
+.contact-textarea-logistics{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
 @media screen and (max-width: 900px){
     .logistics-form-banner{
         height: 80vh;

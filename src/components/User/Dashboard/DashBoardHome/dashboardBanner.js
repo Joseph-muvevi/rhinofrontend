@@ -20,7 +20,7 @@ const DashboardBanner = () => {
 						<Link to="/dashboard/logistics/edit/logisticsform">
 							<button>Update shipment</button>
 						</Link>
-						<Link to="/dashboard/logistics-form">
+						<Link to="/dashboard/storage-form">
 							<button>Add storage</button>
 						</Link>
 						<Link to="/dashboard/storage/edit/storageform">
