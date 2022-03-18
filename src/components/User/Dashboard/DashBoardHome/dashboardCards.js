@@ -10,6 +10,9 @@ import { HashLink } from "react-router-hash-link";
 import React, { useState, useEffect } from "react";
 import "../dashboard.css";
 import axios from "axios";
+import { Box, Grid } from "@mui/material";
+import DashboardCard from "../DashBoardHome/dashboardCard/dashboardCard";
+import { dashboardHorizontalCards } from "./dashboardCardsData"
 
 const DashboardCards = () => {
 	const [logdata, setLogData] = useState([]);
@@ -86,7 +89,7 @@ const DashboardCards = () => {
 
 	return (
 		<div className="dashboard-cards">
-			<div className="dashboard-cards-container">
+			{/* <div className="dashboard-cards-container">
 				<HashLink
 					to="/dashboard/productquotation#product-quotation"
 					className="dashboard-card">
@@ -101,9 +104,10 @@ const DashboardCards = () => {
 					<h3 className="dashboard-card-h3">
 						{productQuotation
 							? productQuotation.length
-							: "No product quotation yer"}
+							: "No product quotation yet"}
 					</h3>
 					<p className="dashboard-card-p">Product quotations</p>
+					
 				</HashLink>
 
 				<HashLink
@@ -199,7 +203,21 @@ const DashboardCards = () => {
 					</h3>
 					<p className="dashboard-card-p">Storage table</p>
 				</HashLink>
-			</div>
+			</div> */}
+				<Grid spacing={2} container>
+					{
+						dashboardHorizontalCards.map(item => (
+							<Grid item lg={4} sm={12} key={item.id}>
+								<DashboardCard 
+									icon={item.icon}
+									title={item.title}
+									path={item.path}
+									text={item.text}
+								/>
+							</Grid>
+						))
+					}
+				</Grid>
 		</div>
 	);
 };

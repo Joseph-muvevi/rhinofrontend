@@ -28,7 +28,7 @@ const DashProductShippedContent = () => {
 			});
 	}, []);
 
-	console.log(productObject, "I A THE PRODUCT DATA");
+	// console.log(productObject, "I A THE PRODUCT DATA");
 
 	return (
 		<div>

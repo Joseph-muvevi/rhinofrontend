@@ -27,6 +27,7 @@ import DashProductStored from './DashBoardHome/DashboardHomePages/DashProductSto
 import Users from './Users/Users'
 import Adduser from './AddUser/Adduser'
 import DashNavMobile from './DashNavMobile/DashNavMobile'
+// import ResponsiveDrawer from "./DashDrawer/DashDrawer"
 
 
 const Dashboard = () => {
@@ -52,6 +53,7 @@ const Dashboard = () => {
 			<div className="dont-display">
 				<DashboardHome/>
 			</div>
+			{/* <ResponsiveDrawer/> */}
 			<Switch className="dashboard-main">
 				<Route path="/" exact component={Home}/>
 				<Route path="/register" component={Adduser}/>

@@ -17,14 +17,8 @@ const DashboardBanner = () => {
 						<Link to="/dashboard/logistics-form">
 							<button>Add shipment</button>
 						</Link>
-						<Link to="/dashboard/logistics/edit/logisticsform">
-							<button>Update shipment</button>
-						</Link>
 						<Link to="/dashboard/storage-form">
 							<button>Add storage</button>
-						</Link>
-						<Link to="/dashboard/storage/edit/storageform">
-							<button>Update storage</button>
 						</Link>
 				   </div>
 				</div>

@@ -307,12 +307,7 @@ const SignupForm = () => {
 						</div>
 					</div>
 
-					<p className="form-alt-p">
-						Already have an account?
-						<Link className="reset-password-p" to="/auth">
-							Sign in
-						</Link>
-					</p>
+				
 					<button type="submit">
 						Register <FontAwesomeIcon icon={faPaperPlane} />
 					</button>
