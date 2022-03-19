@@ -6,7 +6,7 @@ import React from "react";
 import "../StorageEditForms.css";
 import axios from "axios";
 
-const StorageEditFormsContent = () => {
+const StorageEditFormsContent = ({item, setModalIsOpen}) => {
 	const formik = useFormik({
 		initialValues: {
 			fullnames: "",
@@ -78,8 +78,9 @@ const StorageEditFormsContent = () => {
 	});
 
 	return (
-		<div className="logistics-quotation-form">
+		<div className="">
 			<div className="logistics-quotation-form-content">
+				{console.log("The item is...",item)}
 				<form
 					onSubmit={formik.handleSubmit}
 					className="the-logistics-quotation-form">
@@ -564,6 +565,9 @@ const StorageEditFormsContent = () => {
 					<br />
 					<button type="submit">
 						Submit <FontAwesomeIcon icon={faPaperPlane} />
+					</button>
+					<button type="submit" onClick={() => setModalIsOpen(false)}>
+						Close 
 					</button>
 				</form>
 			</div>

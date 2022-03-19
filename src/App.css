@@ -351,3 +351,9 @@ NavLink:focus{
 		width: 90vw !important
 	}
 }
+
+.contact-textarea{
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+}

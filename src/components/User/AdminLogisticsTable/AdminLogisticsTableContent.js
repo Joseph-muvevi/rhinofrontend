@@ -1,10 +1,19 @@
 
 import "./adminlogisticstable.css"
+import axios from "axios"
 import { DataGrid} from '@mui/x-data-grid';
 import { makeStyles } from "@mui/styles";
+import React, { useState, useEffect } from "react";
+import { Box, Button, Container, Paper, Typography } from "@mui/material";
+import Modal from "react-modal";
+import LogisticsFormsContent from "../UserForms/LogisticsForms/LogisticsFormsContent/LogisticsFormsContent";
 // import { Link } from 'react-router-dom'
 
 const AdminLogisticsTableContent = ({data, length, logistics}) => {
+
+	const [shipmentTable, setShipmentTable] = useState()
+	const [modalIsOpen, setModalIsOpen] = useState(false);
+	const [logisticsItem, setLogisticsItems] = useState({})
 
 	const tableStyles = makeStyles(theme => ({
 		root: {
@@ -22,6 +31,10 @@ const AdminLogisticsTableContent = ({data, length, logistics}) => {
 				  "&:nth-child(2n)": { backgroundColor: "#333333" }
 				}
 			  }
+		},
+		modalStyles : {
+			borderRadius: 4,
+			padding: 2
 		}
 	}))
 
@@ -49,6 +62,36 @@ const AdminLogisticsTableContent = ({data, length, logistics}) => {
 		{ field: "arrivaltime", align:"left", headerAlign: "left", headerName: "Arrival time", width: 150 },
 		{ field: "notes", align:"left", headerAlign: "left", headerName: "Departure time", width: 250 },
 		{ field: "status", align:"left", headerAlign: "left", headerName: "Status", width: 250 },
+		{
+			field: "update",
+			width: 100,
+			align:"left",
+			headerAlign: "left",
+			headerName: "Update",
+			renderCell: (cellValues) => {
+				return (
+					<>
+						<Button onClick={() => setModalIsOpen(true)} variant="contained" color="primary">
+							update
+						</Button>
+					</>
+				)
+			}
+		},
+		{
+			field: "delete",
+			width: 100,
+			align:"left",
+			headerAlign: "left",
+			headerName: "delete",
+			renderCell: (cellValues) => {
+				return (
+					<Button pl={2} variant="contained" >
+						delete
+					</Button>
+				)
+			}
+		},
 	  ];
 	  
 	return (
@@ -66,6 +109,15 @@ const AdminLogisticsTableContent = ({data, length, logistics}) => {
 							headerHeight={60}
 							pageSize={100}
 							className={classes.root}
+							onRowClick={(data) => {
+								axios
+									.get(`https://rhinojohnbackend.herokuapp.com/api/logisticsrecords/${data.id}`)
+									.then((res) => {
+										console.log("The single logistics itens value",res.data)
+										setLogisticsItems(res.data)
+									})
+									.catch((err) => console.log(err));
+							}}
 							sx={{
 								boxShadow: 2,
 								border: 0,
@@ -78,94 +130,61 @@ const AdminLogisticsTableContent = ({data, length, logistics}) => {
 						/>
 					)
 				}
+						<Modal
+						style={{
+							overlay: {
+							position: 'fixed',
+							top: 0,
+							left: 0,
+							right: 0,
+							bottom: 0,
+							backgroundColor: 'rgba(33, 32, 33, 0.6)'
+							},
+							content: {
+							position: 'absolute',
+							top: '40px',
+							left: '40px',
+							right: '40px',
+							bottom: '40px',
+							border: '1px solid #ccc',
+							background: '#212021',
+							overflow: 'auto',
+							WebkitOverflowScrolling: 'touch',
+							borderRadius: '4px',
+							outline: 'none',
+							padding: '20px'
+							}
+						}}
+						isOpen={modalIsOpen}
+						onRequestClose={() => setModalIsOpen(false)}
+						aria={{
+							labelledby: "heading",
+							describedby: "full_description"
+						}}>
+						
+							<Box 
+								  sx={{
+									borderRadius: 2,
+									padding: 2,
+									backgroundColor: 'primary.main',
+									'&:hover': {
+										backgroundColor: 'primary.main',
+										opacity: [0.9, 0.8, 0.7],
+									},
+								  }}
+								  className
+							>
+								<Typography variant="h3" color="primary" >
+									Updating shipping tracking no: {logisticsItem.trackno}
+								</Typography>
+							</Box>
+						
+						<Box>
+							<LogisticsFormsContent setModalIsOpen = {setModalIsOpen}/>
+						</Box>
+					</Modal>
 			</div>
 
-		// <div  className="logistics-content-table">
-		// 	<div className="logistics-content-table-content">
-				   
-		// 			<div  className="logistics-content-table-content-info">
-		// 				<div className="logistics-content-table-content-topic-upper">
-		// 					<p className="logistics-content-table-content-topic-p-number">
-		// 						<span className="header-phone-only">
-		// 							No: 
-		// 						</span>
-		// 						{ length + 1 }
-		// 					</p>
-		// 					<p className="logistics-content-table-content-topic-p-track">
-		// 						<span className="header-phone-only">
-		// 							Track Number: 
-		// 						</span>
-		// 						{info ? info.trackno : null}
-		// 					</p>
-		// 					<p className="logistics-content-table-content-topic-p-fullnames">
-		// 						<span className="header-phone-only">
-		// 							Product name: 
-		// 						</span>
-		// 						{info ? info.fullnames : null}    
-		// 					</p>
-		// 					<p className="logistics-content-table-content-topic-p-product">
-		// 						<span className="header-phone-only">
-		// 							No: 
-		// 						</span>
-		// 						{info ? info.product : null}
-		// 					</p>
-		// 					<p className="logistics-content-table-content-topic-p-address">
-		// 						<span className="header-phone-only">
-		// 							Addess: 
-		// 						</span>
-		// 						{info ? info.shipaddress : null}
-		// 					</p>
-		// 					<p className="logistics-content-table-content-topic-p-weight">
-		// 						<span className="header-phone-only">
-		// 							Weight unit: 
-		// 						</span>
-		// 						{info ? info.weight : null} {info ? info.weightunit : null}
-		// 					</p>
-		// 					<p className="logistics-content-table-content-topic-departure-city">
-		// 						<span className="header-phone-only">
-		// 							City DExparted: 
-		// 						</span>
-		// 						 {info ? info.departurecity : null}
-		// 					</p>
-		// 					<p className="logistics-content-table-content-topic-departure-country">
-		// 						<span className="header-phone-only">
-		// 							Country Departed: 
-		// 						</span>
-		// 						{info ? info.departurecountry : null}
-		// 					</p>
-		// 					<p className="logistics-content-table-content-topic-arrival-city">
-		// 						<span className="header-phone-only">
-		// 							Arrival City: 
-		// 						</span>
-		// 						{info ? info.arrivalcity : null}
-		// 					</p>
-		// 					<p className="logistics-content-table-content-topic-arrival-country">
-		// 						<span className="header-phone-only">
-		// 							Arrival Country: 
-		// 						</span>
-		// 						{info ? info.arrivalcountry : null}
-		// 					</p>
-		// 					<p className="logistics-content-table-content-topic-status">
-		// 						<span className="header-phone-only">
-		// 							Status: 
-		// 						</span>
-		// 						{info ? info.status : null}
-		// 					</p>
-		// 				</div>
-		// 				<div className="logistics-content-table-content-topic-lower">
-								
-		// 					<div className="logistics-content-table-content-topic-lower-observation">
-		// 						<p style={{marginLeft: "12px"}} className="logistics-content-table-content-topic-p">
-		// 						<span className="header-phone-only">
-		// 							Observations : 
-		// 						</span>
-		// 							{info ? info.notes : null}
-		// 						</p>
-		// 					</div>
-		// 				</div>
-		// 			</div>
-		// 	</div>
-		// </div>
 	)
 }
 

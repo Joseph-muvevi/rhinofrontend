@@ -10,7 +10,7 @@ const AdminStorageContentTableCard = ({storage}) => {
 
     return (
         <div className="admin-storage-table-card">
-            <AdminStorageTableHeaders/>
+            {/* <AdminStorageTableHeaders/> */}
             {
                 storageItems ? storageItems.map((object, arraylength) => (
                     <>

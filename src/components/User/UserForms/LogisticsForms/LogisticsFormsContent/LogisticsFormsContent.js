@@ -7,7 +7,7 @@ import "../LogisticsForms.css";
 import axios from "axios";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 
-const LogisticsFormsContent = () => {
+const LogisticsFormsContent = ({setModalIsOpen}) => {
 	const [error, setErrors] = useState("");
 
 	const formik = useFormik({
@@ -109,7 +109,7 @@ const LogisticsFormsContent = () => {
 	});
 
 	return (
-		<div className="logistics-quotation-form">
+		<div className="">
 			<div className="logistics-quotation-form-content">
 				<form
 					onSubmit={formik.handleSubmit}
@@ -823,6 +823,9 @@ const LogisticsFormsContent = () => {
 					<br />
 					<button type="submit">
 						Submit <FontAwesomeIcon icon={faPaperPlane} />
+					</button>
+					<button type="submit" onClick={() => setModalIsOpen(false)}>
+						Close 
 					</button>
 				</form>
 			</div>
