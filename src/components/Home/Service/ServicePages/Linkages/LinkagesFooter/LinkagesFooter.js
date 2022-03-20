@@ -97,12 +97,8 @@ const LinkagesFooter = () => {
 						<h3 className="linkages-footer-title">Contacts</h3>
 						<ul className="linkages-footer-ul">
 							<li className="linkages-footer-li">
-								<FontAwesomeIcon icon={faMapMarkerAlt} /> Bosto
-								Rd Near Tangaza Karen Nairobi Kenya
-							</li>
-							<li className="linkages-footer-li">
-								<FontAwesomeIcon icon={faPhoneAlt} />
-								+254 753 999 444
+								<FontAwesomeIcon icon={faMapMarkerAlt} />
+								Karen Nairobi Kenya
 							</li>
 							<li className="linkages-footer-li">
 								<FontAwesomeIcon icon={faPhoneAlt} />
@@ -111,10 +107,6 @@ const LinkagesFooter = () => {
 							<li className="linkages-footer-li">
 								<FontAwesomeIcon icon={faMailBulk} />
 								info@rhinojonprimemetals.com
-							</li>
-							<li className="service-footer-li">
-								<FontAwesomeIcon icon={faMailBulk} />
-								ceo@rhinojonprimemetals.com
 							</li>
 						</ul>
 					</div>

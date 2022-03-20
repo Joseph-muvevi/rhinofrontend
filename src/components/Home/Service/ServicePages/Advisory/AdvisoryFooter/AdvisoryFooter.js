@@ -97,12 +97,8 @@ const AdvisoryFooter = () => {
 						<h3 className="advisory-footer-title">Contacts</h3>
 						<ul className="advisory-footer-ul">
 							<li className="advisory-footer-li">
-								<FontAwesomeIcon icon={faMapMarkerAlt} /> Bosto
-								Rd Near Tangaza Karen Nairobi Kenya
-							</li>
-							<li className="advisory-footer-li">
-								<FontAwesomeIcon icon={faPhoneAlt} />
-								+254 753 999 444
+								<FontAwesomeIcon icon={faMapMarkerAlt} /> 
+								Karen Nairobi Kenya
 							</li>
 							<li className="advisory-footer-li">
 								<FontAwesomeIcon icon={faPhoneAlt} />
@@ -111,10 +107,6 @@ const AdvisoryFooter = () => {
 							<li className="advisory-footer-li">
 								<FontAwesomeIcon icon={faMailBulk} />
 								info@rhinojonprimemetals.com
-							</li>
-							<li className="service-footer-li">
-								<FontAwesomeIcon icon={faMailBulk} />
-								ceo@rhinojonprimemetals.com
 							</li>
 						</ul>
 					</div>

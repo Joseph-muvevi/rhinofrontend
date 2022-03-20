@@ -6,9 +6,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, {useState, useEffect} from "react";
 import "./shipmentdatatable.css";
 import moment from "moment"
+import { Box, Grid } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 const ShipmentTableHeader = ({ headers }) => {
   const header = headers;
+
+	const tableHeader = makeStyles((theme) => ({
+		wrapper: {
+			width: "80vw",
+			margin: "auto",
+			backgroundColor: theme.palette.primary.main,
+			borderTopLeftRadius: 2,
+			borderTopRightRadius: 2,
+			display: "flex",
+			alignItems: "flex-start",
+			// padding: "10px"
+		}
+	}))
 
   const [date, setDate] = useState({})
 
@@ -22,14 +37,16 @@ const ShipmentTableHeader = ({ headers }) => {
   const dateString = moment(date).format('MMMM Do YYYY') 
   console.log(dateString, "the date string")
 
+  const classes = tableHeader()
+
   return (
 	<>
-		<div className="shipment-table-headers-client">
-			<div className="font-awesome-sign-alt-icon">
+		<Box className={classes.wrapper} color="white">
+			{/* <div className="font-awesome-sign-alt-icon">
 				<FontAwesomeIcon icon={faSignOutAlt} color="white" size="2x" />
-			</div>
-			<div className="header-info-container">
-				<div className="shipment-table-headers-left">
+			</div> */}
+			<Grid container spacing={2} >
+				<Grid item md={4} sm={12} className="shipment-table-headers-left">
 					<div className="shipment-table-headers-body">
 						<h3 className="shipment-table-headers-h3-flex">
 							Tracking number :
@@ -65,8 +82,8 @@ const ShipmentTableHeader = ({ headers }) => {
 							{ header ? header.shipaddress : null }
 						</p>
 					</div>
-				</div>
-				<div className="shipment-tabe-headers-middle">
+				</Grid>
+				<Grid item md={4} sm={13} className="shipment-tabe-headers-middle">
 					<div className="shipment-table-headers-body">
 						<h3 className="shipment-table-headers-h3">
 						{ header ? dateString.toString() : null }
@@ -100,8 +117,8 @@ const ShipmentTableHeader = ({ headers }) => {
 							</p>
 						</div>
 					</div>
-				</div>
-				<div className="shipment-tabe-headers-right">
+				</Grid>
+				<Grid item md={4} sm={13} className="shipment-tabe-headers-right">
 					<div className="shipment-table-headers-body">
 						<h3 className="shipment-table-headers-h3-estimated">
 							Estimated delivery :
@@ -146,9 +163,9 @@ const ShipmentTableHeader = ({ headers }) => {
 							</p>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
+				</Grid>
+			</Grid>
+		</Box>
 	</>
   );
 };

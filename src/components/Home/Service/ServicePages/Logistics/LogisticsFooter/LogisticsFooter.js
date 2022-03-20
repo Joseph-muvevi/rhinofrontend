@@ -97,12 +97,8 @@ const LogisticsFooter = () => {
 						<h3 className="logistics-footer-title">Contacts</h3>
 						<ul className="logistics-footer-ul">
 							<li className="logistics-footer-li">
-								<FontAwesomeIcon icon={faMapMarkerAlt} /> Bosto
-								Rd Near Tangaza Karen Nairobi Kenya
-							</li>
-							<li className="logistics-footer-li">
-								<FontAwesomeIcon icon={faPhoneAlt} />
-								+254 753 999 444
+								<FontAwesomeIcon icon={faMapMarkerAlt} /> 
+								Karen Nairobi Kenya
 							</li>
 							<li className="logistics-footer-li">
 								<FontAwesomeIcon icon={faPhoneAlt} />
@@ -111,10 +107,6 @@ const LogisticsFooter = () => {
 							<li className="logistics-footer-li">
 								<FontAwesomeIcon icon={faMailBulk} />
 								info@rhinojonprimemetals.com
-							</li>
-							<li className="service-footer-li">
-								<FontAwesomeIcon icon={faMailBulk} />
-								ceo@rhinojonprimemetals.com
 							</li>
 						</ul>
 					</div>

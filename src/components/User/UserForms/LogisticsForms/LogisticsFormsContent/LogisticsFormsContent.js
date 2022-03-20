@@ -16,6 +16,81 @@ const logisticsFormStyles = makeStyles({
 	}
 })
 
+// .of(
+// 	Yup.object().shape({
+// 		fullnames: Yup.string().required().min(3).max(100),
+// 		email: Yup.string().required().min(3).max(100),
+// 		company: Yup.string().required().min(3).max(100),
+// 		shipaddress: Yup.string().required().min(3).max(100),
+// 		consignfullnames: Yup.string().required().min(3).max(100),
+// 		consignemail: Yup.string().required().min(3).max(100),
+// 		consigncompany: Yup.string().required().min(3).max(100),
+// 		consignaddress: Yup.string().required().min(3).max(100),
+// 		departurecity: Yup.string().required().min(3).max(50),
+// 		departurecountry: Yup.string().required().min(3).max(50),
+// 		arrivalcity: Yup.string().required().min(3).max(50),
+// 		arrivalcountry: Yup.string().required().min(3).max(50),
+// 		logisticstype: Yup.string().required().min(3).max(50),
+// 		weight: Yup.number().required().min(1).max(50000000),
+// 		weightunit: Yup.string().required().min(1).max(50),
+// 		producttype: Yup.string().required().min(3).max(50),
+// 		pieces: Yup.number().required().min(1).max(50000000),
+// 		departuredate: Yup.string().required().min(3).max(100),
+// 		departuretime: Yup.string().required().min(3).max(100),
+// 		arrivaldate: Yup.string().required().min(3).max(100),
+// 		quality: Yup.string().required().min(3).max(100),
+// 		product: Yup.string().required().min(3).max(100),
+// 		notes: Yup.string().required().min(20).max(2000),
+// 		idno: Yup.string().required().min(5).max(30),
+// 		unit: Yup.string().required().min(2).max(100),
+// 		timeevents: Yup.string().min(4).max(10).required(),
+// 		arrivaltime: Yup.string().min(5).max(30),
+// 		collectoraddress: Yup.string().min(3).max(100),
+// 		collectortel: Yup.string().min(3).max(100),
+// 		collectedby: Yup.string().min(3).max(100),
+// 		currentlocation: Yup.string().min(3).max(100),
+// 		currentdate: Yup.string().min(3).max(100),
+// 		status: Yup.string().min(3).max(100).required(),
+// 		completed: Yup.boolean().oneOf([true, false]),
+// 	})
+// )
+
+// formData: [{
+// 	fullnames: "",
+// 	email: "",
+// 	company: "",
+// 	shipaddress: "",
+// 	consignfullnames: "",
+// 	consignemail: "",
+// 	consigncompany: "",
+// 	consignaddress: "",
+// 	departurecity: "",
+// 	departurecountry: "",
+// 	arrivalcity: "",
+// 	arrivalcountry: "",
+// 	logisticstype: "",
+// 	weight: "",
+// 	weightunit: "",
+// 	producttype: "",
+// 	pieces: "",
+// 	departuredate: "",
+// 	departuretime: "",
+// 	arrivaldate: "",
+// 	quality: "",
+// 	notes: "",
+// 	idno: "",
+// 	unit: "",
+// 	arrivaltime: "",
+// 	timeevents: "",
+// 	collectedby: "",
+// 	collectoraddress: "",
+// 	collectortel: "",
+// 	completed: "",
+// 	currentlocation: "",
+// 	currentdate: "",
+// 	status: "",
+// 	product: "",
+// }]
 
 
 const LogisticsFormsContent = ({setModalIsOpen}) => {
@@ -24,99 +99,70 @@ const LogisticsFormsContent = ({setModalIsOpen}) => {
 	
 	const formik = useFormik({
 		initialValues: {
-			fullnames: "",
-			email: "",
-			company: "",
-			shipaddress: "",
-			consignfullnames: "",
-			consignemail: "",
-			consigncompany: "",
-			consignaddress: "",
-			departurecity: "",
-			departurecountry: "",
-			arrivalcity: "",
-			arrivalcountry: "",
-			logisticstype: "",
-			weight: "",
-			weightunit: "",
-			producttype: "",
-			pieces: "",
-			departuredate: "",
-			departuretime: "",
-			arrivaldate: "",
-			quality: "",
-			trackno: "",
-			notes: "",
-			idno: "",
-			unit: "",
-			arrivaltime: "",
-			timeevents: "",
-			collectedby: "",
-			collectoraddress: "",
-			collectortel: "",
-			completed: "",
-			currentlocation: "",
-			currentdate: "",
-			status: "",
-			product: "",
+			itemtrackno: "",
+			formData: [{
+				shippersfirstname: "",
+				shipperslastname: "",
+				shippersemail: "",
+				shippersidno: "",
+				shipperstelephone: "",
+				shipperscompany: "",
+				shippersaddress: "",
+				consignfirstname: "",
+				consignlastname: "",
+				consigntelephone: "",
+				consignemail: "",
+				consigncompany: "",
+				consignaddress: "",
+				cosignidno: "",
+				departurecity: "",
+				departurecountry: "",
+				departuredate: "",
+				departuretime: "",
+				arrivalcity: "",
+				arrivalcountry: "",
+				arrivaltime: "",
+				arrivaldate: "",
+				logisticstype: "",
+				itemsweight: "",
+				itemsweightunit: "",
+				itemsproducttype: "",
+				itemspieces: "",
+				itemsquality: "",
+				timeevents: "",
+				dateevents: "",
+				quantifiableunit: "",
+				collectorfirstname: "",
+				collectorlastname: "",
+				itemsname: "",
+				currentlocation: "",
+			}]
 		},
 		validationSchema: Yup.object().shape({
-			fullnames: Yup.string().required().min(3).max(100),
-			email: Yup.string().required().min(3).max(100),
-			company: Yup.string().required().min(3).max(100),
-			shipaddress: Yup.string().required().min(3).max(100),
-			consignfullnames: Yup.string().required().min(3).max(100),
-			consignemail: Yup.string().required().min(3).max(100),
-			consigncompany: Yup.string().required().min(3).max(100),
-			consignaddress: Yup.string().required().min(3).max(100),
-			departurecity: Yup.string().required().min(3).max(50),
-			departurecountry: Yup.string().required().min(3).max(50),
-			arrivalcity: Yup.string().required().min(3).max(50),
-			arrivalcountry: Yup.string().required().min(3).max(50),
-			logisticstype: Yup.string().required().min(3).max(50),
-			weight: Yup.number().required().min(1).max(50000000),
-			weightunit: Yup.string().required().min(1).max(50),
-			producttype: Yup.string().required().min(3).max(50),
-			pieces: Yup.number().required().min(1).max(50000000),
-			departuredate: Yup.string().required().min(3).max(100),
-			departuretime: Yup.string().required().min(3).max(100),
-			arrivaldate: Yup.string().required().min(3).max(100),
-			quality: Yup.string().required().min(3).max(100),
-			trackno: Yup.string().required().min(3).max(100),
-			product: Yup.string().required().min(3).max(100),
-			notes: Yup.string().required().min(20).max(2000),
-			idno: Yup.string().required().min(5).max(30),
-			unit: Yup.string().required().min(2).max(100),
-			timeevents: Yup.string().min(4).max(10).required(),
-			arrivaltime: Yup.string().min(5).max(30),
-			collectoraddress: Yup.string().min(3).max(100),
-			collectortel: Yup.string().min(3).max(100),
-			collectedby: Yup.string().min(3).max(100),
-			currentlocation: Yup.string().min(3).max(100),
-			currentdate: Yup.string().min(3).max(100),
-			status: Yup.string().min(3).max(100).required(),
-			completed: Yup.boolean().oneOf([true, false]),
+			itemtrackno: Yup.string().required().min(3).max(100),
+			formData: Yup.array()
+
 		}),
 		onSubmit: (values, { resetForm }) => {
 			try {
 				axios
 					.post(
-						"https://rhinojohnbackend.herokuapp.com/api/logisticsrecords",
-						// "http://localhost:9000/api/shipment/post",
+						// "https://rhinojohnbackend.herokuapp.com/api/logisticsrecords",
+						"http://localhost:9000/api/shipment/post",
 						values
 					)
 					.then((res) => {
 						console.log(res, "this is the res data");
 					})
 					.catch((err) => {
-						console.log(err.response, "the error message is");
-						setErrors(err.response.data.message);
+						console.log(err, "this is the error data");
+						// setErrors(err.response.data.message);
 					});
 				alert(JSON.stringify(values, null, 2));
 				// console.log(values);
 				resetForm({ values: "" });
 			} catch (err) {
-				// console.log(err);
+				console.log("The ctch error is", err);
 			}
 		},
 	});
@@ -593,15 +639,15 @@ const LogisticsFormsContent = ({setModalIsOpen}) => {
 									className="logistics-input-fields"
 									type="text"
 									placeholder="Track number"
-									name="trackno"
+									name="itemtrackno"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
-									value={formik.values.trackno}
+									value={formik.values.itemtrackno}
 									required
 								/>
-								{formik.touched.trackno && formik.errors.trackno ? (
+								{formik.touched.itemtrackno && formik.errors.itemtrackno ? (
 									<div className="error">
-										{formik.errors.trackno}
+										{formik.errors.itemtrackno}
 									</div>
 								) : null}
 							</div>
