@@ -4,8 +4,8 @@ import moment from "moment";
 import { Box, Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
-const ShipmentTableContent = ({ array, filtered, dates }) => {
-	const content = array;
+const ShipmentTableContent = ({key, item }) => {
+	// const content = array;
 
 	const [date, setDate] = useState("")
 
@@ -25,9 +25,9 @@ const ShipmentTableContent = ({ array, filtered, dates }) => {
 
 	const listItem = [1]
 
-	useEffect(() => {
-		setDate(content.currentdate)
-	}, []);
+	// useEffect(() => {
+	// 	setDate(content.currentdate)
+	// }, []);
 
 
 	const classes = tableContentInfo()
@@ -40,15 +40,14 @@ const ShipmentTableContent = ({ array, filtered, dates }) => {
 			<Box className={classes.wrapper}>
 				
 				<Box>
-					{console.log(filtered)}
+					{console.log(item)}
 				</Box>
 			</Box>
 
 
 
 
-
-			<div key={content ? content._id : null} className="shipment-content-table">
+			<div key={item ? item._id : null} className="shipment-content-table">
 				<div className="shipment-content-table-content">
 					{/* {
 				content.createdAt !== content.date ? (
@@ -61,7 +60,7 @@ const ShipmentTableContent = ({ array, filtered, dates }) => {
 							<div className="shipment-content-table-content-topic">
 								<p className="shipment-content-table-content-topic-hash">#</p>
 								<p className="shipment-content-table-content-topic-date">
-									{content ? dateString.toString()  : null}
+									{/* {content ? dateString.toString()  : null} */}
 									{/* {content ? content._id  : null} */}
 								</p>
 								<p className="shipment-content-table-content-topic-location">
@@ -75,42 +74,40 @@ const ShipmentTableContent = ({ array, filtered, dates }) => {
 						) : null
 					}
 
-					{[content].map(() => (
 						<>
 							<div className="shipment-content-table-content-info">
 								<p className="shipment-content-table-content-topic-hash">
 									<span className="shipment-header-phone-only">
 										No: 
 									</span>
-									{filtered  ? filtered.length : null}
+									{key}
 								</p>
 								<p className="shipment-content-table-content-topic-date">
 									<span className="shipment-header-phone-only">
 										Observation: 
 									</span>
-									{content ? content.notes : null}
+									{item.notes}
 								</p>
 								<p className="shipment-content-table-content-topic-location">
 									<span className="shipment-header-phone-only">
 										Location : 
 									</span>
-									{content ? content.currentlocation : null}
+									{item.currentlocation}
 								</p>
 								<p className="shipment-content-table-content-topic-time">
 									<span className="shipment-header-phone-only">
 										Time : 
 									</span>
-									{content ? content.timeevents : null}
+									{item.timeevents}
 								</p>
 								<p className="shipment-content-table-content-topic-pieces">
 									<span className="shipment-header-phone-only">
 										Pieces: 
 									</span>
-									{content ? content.pieces : null} pieces
+									 pieces
 								</p>
 							</div>
 						</>
-					))}
 				</div>
 			</div>
 		</>

@@ -12,7 +12,6 @@ const ShipmentCard = ({result, filtered}) => {
 
 	// const [dateList, setDateList] = useState([])
 
-	
 	const tableContent = makeStyles((theme) => ({
 		wrapper: {
 			width: "80vw",
@@ -29,6 +28,8 @@ const ShipmentCard = ({result, filtered}) => {
 	const classes = tableContent()
 
 	// let filteredDateArr 
+
+	let jsonFyed = JSON.parse(result) || [];
 
 	return (
 
@@ -50,19 +51,17 @@ const ShipmentCard = ({result, filtered}) => {
 							</p>
 						</div>
 						{
-							result? <ShipmentTableHeader headers = {result}/> : (
+							jsonFyed ? <ShipmentTableHeader headers = {jsonFyed}/> : (
 								<p className="terniary-condition-p">
 									Track your shipment
 								</p>
 							)
 						}
 						{
-							filter ? filter.map(filterResults => 
+							filter ? filter.formItems.map(formItem => 
 									(<ShipmentTableContent 
-										array = {filterResults} 
-										filtered = {filtered}
-										results = {result} 
-										dates ={filterResults.createdAt}  /> )) 
+										key={formItem._id}
+										item = {formItem} /> )) 
 									: null
 						}
 
@@ -129,5 +128,7 @@ const ShipmentCard = ({result, filtered}) => {
 		// </div>
 	)
 }
+
+
 
 export default ShipmentCard

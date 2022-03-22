@@ -3,11 +3,15 @@ import "../../shipment.css";
 import axios from "axios";
 import ShipmentCard from "./ShipmentCard.js";
 import Navbar from "../../../Navbar/Navbar";
+import { shipping } from "../../../../data/track";
+
 
 const ShipmentTable = () => {
 	const [trackNumber, setTrackNumber] = useState("");
 	const [shipment, setShipment] = useState([]);
+	const [data, setData] = useState([]);
 	const [getOne, setGetOne] = useState()
+	const [showCard, setShowCard] = useState(false);
 
 	const handleTrackno = (e) => {
 		setTrackNumber(e.target.value);
@@ -15,20 +19,32 @@ const ShipmentTable = () => {
 
 	const trackItem = (e) => {
 		e.preventDefault();
-		axios
-			.get(`https://rhinojohnbackend.herokuapp.com/api/logisticsrecords`)
-			// .get(`http://localhost:9000/api/shipment/getall/${trackNumber}`)
+		const filterItems = data.filter(
+			({ trackno }) => trackno === trackNumber
+		);
+		console.log(filterItems);
+		setShipment(filterItems);
+		setShowCard(true);
+		console.log(shipment);
+	
+		// axios
+		// 	.get(`https://rhinojohnbackend.herokuapp.com/api/logisticsrecords`)
+		// 	// .get(`http://localhost:9000/api/shipment/getall/${trackNumber}`)
 
-			.then((res) => {
-				setShipment(res.data);
-			})
-			.catch();
+		// 	.then((res) => {
+		// 		setShipment(res.data);
+		// 	})
+		// 	.catch();
 	};
 	
 	const setTracknumber = (e) => {
 		e.preventDefault()
 		setTrackNumber(e.target.value)
 	}
+
+	useEffect(() => {
+		setData(shipping)
+	},[])
 
 	// useEffect(() => {
 	
@@ -44,11 +60,12 @@ const ShipmentTable = () => {
 
 	
 
-	const result = shipment.find(({ trackno }) => trackno === trackNumber);
+	// const result = shipment.find(({ trackno }) => trackno === trackNumber);
+	// const result = data.find(({ trackno }) => trackno === trackNumber);
 
-	const filterItems = shipment.filter(
-		({ trackno }) => trackno === trackNumber
-	);
+	// const filterItems = data.filter(
+	// 	({ trackno }) => trackno === trackNumber
+	// );
 
 	// console.log(shipment)
 
@@ -68,18 +85,29 @@ const ShipmentTable = () => {
 					<button type="submit"> Search </button>
 				</form>
 				{console.log("Get one item is", getOne)}
-			{shipment || shipment !== undefined ? (
-				<ShipmentCard
-					result={result}
+
+				{
+					showCard ? (<ShipmentCard result={shipment[0]}
 					shipment={shipment}
-					filtered={filterItems}
+					filtered={shipment} />) : (
+						<div className="shipment-table-content">
+							<h1 className="shipment-table-header">Nothin here yet</h1>
+							<p className="shipment-table-p"></p>
+						</div>
+					)
+				}
+			{/* {shipment || shipment !== undefined ? (
+				<ShipmentCard
+					result={shipment && ["1","2"]}
+					shipment={shipment}
+					filtered={shipment}
 				/>
 			) : (
 				<div className="shipment-table-content">
 					<h1 className="shipment-table-header">Nothin here yet</h1>
 					<p className="shipment-table-p"></p>
 				</div>
-			)}
+			)} */}
 		</div>
 	);
 };
