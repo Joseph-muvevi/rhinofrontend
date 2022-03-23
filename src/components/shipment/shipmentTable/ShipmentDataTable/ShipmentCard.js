@@ -8,7 +8,7 @@ import "./shipmentdatatable.css"
 import { Box, Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
-const ShipmentCard = ({result, filtered}) => {
+const ShipmentCard = ({result}) => {
 
 	// const [dateList, setDateList] = useState([])
 
@@ -25,11 +25,11 @@ const ShipmentCard = ({result, filtered}) => {
 		}
 	}))
 
-	let filter = filtered
+
 	const classes = tableContent()
 
 	// let filteredDateArr 
-
+	console.log("The result cards are", result)
 	return (
 
 		
@@ -38,7 +38,7 @@ const ShipmentCard = ({result, filtered}) => {
 		<Box className={classes.wrapper}> 
 			<div className={classes.contentWrapper}>
 			{
-				filtered ? (
+				result ? (
 					<>
 						<div className="track-shipment-top-info">
 							<h2 className="track-shipment-top-h2">
@@ -57,6 +57,13 @@ const ShipmentCard = ({result, filtered}) => {
 							)
 						}
 						{
+							result.formitems.map(item => (
+								<ShipmentTableContent key={item._id} item={item} result={result.formitems}/>
+							))
+
+						}
+
+						{/* {
 							filter ? filter.map(filterResults => 
 									(<ShipmentTableContent 
 										array = {filterResults} 
@@ -64,10 +71,10 @@ const ShipmentCard = ({result, filtered}) => {
 										results = {result} 
 										dates ={filterResults.createdAt}  /> )) 
 									: null
-						}
+						} */}
 
 						{
-							console.log(typeof(filtered.createdAt), "i am the content date")
+							// console.log(typeof(result.createdAt), "i am the content date")
 						/* {
 							filter.map(item => {console.log("we are fetched dates", item.date)})
 						} */}
@@ -77,7 +84,7 @@ const ShipmentCard = ({result, filtered}) => {
 					</p>
 			}
 			</div>
-			{console.log("I am the result underneath track",filtered)}
+			{/* {console.log("I am the result underneath track",result)} */}
 		</Box>
 
 

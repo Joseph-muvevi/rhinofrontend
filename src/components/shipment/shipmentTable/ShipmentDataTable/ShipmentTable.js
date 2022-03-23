@@ -3,26 +3,28 @@ import "../../shipment.css";
 import axios from "axios";
 import ShipmentCard from "./ShipmentCard.js";
 import Navbar from "../../../Navbar/Navbar";
+import { shipping } from "../../../../data/track";
 
 const ShipmentTable = () => {
 	const [trackNumber, setTrackNumber] = useState("");
 	const [shipment, setShipment] = useState([]);
 	const [getOne, setGetOne] = useState()
 
-	const handleTrackno = (e) => {
-		setTrackNumber(e.target.value);
-	};
+	// const handleTrackno = (e) => {
+	// 	setTrackNumber(e.target.value);
+	// };
 
 	const trackItem = (e) => {
 		e.preventDefault();
-		axios
-			.get(`https://rhinojohnbackend.herokuapp.com/api/logisticsrecords`)
-			// .get(`http://localhost:9000/api/shipment/getall/${trackNumber}`)
+		// axios
+		// 	.get(`https://rhinojohnbackend.herokuapp.com/api/logisticsrecords`)
+		// 	// .get(`http://localhost:9000/api/shipment/getall/${trackNumber}`)
 
-			.then((res) => {
-				setShipment(res.data);
-			})
-			.catch();
+		// 	.then((res) => {
+		// 		setShipment(res.data);
+		// 	})
+		// 	.catch();
+		setShipment(shipping)
 	};
 	
 	const setTracknumber = (e) => {
@@ -42,13 +44,16 @@ const ShipmentTable = () => {
 	// 			.catch();
 	// }, [trackNumber]);
 
-	
+	// console.log("The shipment is", shipment)
 
 	const result = shipment.find(({ trackno }) => trackno === trackNumber);
 
 	const filterItems = shipment.filter(
 		({ trackno }) => trackno === trackNumber
 	);
+
+	// console.log("The filtered item is", filterItems)
+	// console.log("The result item is", result)
 
 	// console.log(shipment)
 
@@ -67,12 +72,10 @@ const ShipmentTable = () => {
 					/>
 					<button type="submit"> Search </button>
 				</form>
-				{console.log("Get one item is", getOne)}
+				{/* {console.log("Get one item is", getOne)} */}
 			{shipment || shipment !== undefined ? (
 				<ShipmentCard
 					result={result}
-					shipment={shipment}
-					filtered={filterItems}
 				/>
 			) : (
 				<div className="shipment-table-content">

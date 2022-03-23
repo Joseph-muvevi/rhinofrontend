@@ -1,120 +1,192 @@
 import React, { useState, useEffect } from "react";
 import "../../shipment.css";
 import moment from "moment";
-import { Box, Grid } from "@mui/material";
+import { Box, Container, Grid, Toolbar, Typography} from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { DataGrid } from "@mui/x-data-grid";
 
-const ShipmentTableContent = ({ array, filtered, dates }) => {
-	const content = array;
+const ShipmentTableitem = ({result, item}) => {
+	
 
-	const [date, setDate] = useState("")
+	// const [date, setDate] = useState("")
 
 		
-	const tableContentInfo = makeStyles((theme) => ({
+	const tableStyles = makeStyles(theme => ({
 		wrapper: {
-			width: "80vw",
-			margin: "auto",
-			borderBottomLeftRadius: 2,
-			borderBottomRightRadius: 2,
+			width: "100%",
+			marginTop: "20px"
+			// backgroundColor:"red"
 		},
-		contentWrapper: {
+		gridcontainerheader:{
+			width: "100%",
+			// backgroundColor: "blue"
+			backgroundColor: theme.palette.primary.main,
 			padding: "10px"
+		},
+		gridcontainerbody:{
+			width: "100%",
+			padding: "10px"
+			// backgroundColor: "blue"
+		},
+		gridItems:{
+			minWidth: "150px",
+			marginTop: "20px",
+			marginBottom: "20px",
+		},
+		typography: {
+			color: theme.palette.text.light
 		}
 	}))
 
 
-	const listItem = [1]
 
-	useEffect(() => {
-		setDate(content.currentdate)
-	}, []);
-
-
-	const classes = tableContentInfo()
-
-	const dateString = moment(date).format("dddd MMMM Do YYYY");
-	// console.log(dateString, "the date string")
+	const classes = tableStyles()
 
 	return (
-		<>
+		<Container>
+			<br/><br/>
 			<Box className={classes.wrapper}>
-				
-				<Box>
-					{console.log(filtered)}
-				</Box>
+					<Grid spacing={2} className={classes.gridcontainerheader} container>
+						<Grid item className={classes.gridItems}>
+							<Typography variant="body" className={classes.typography}>
+								No
+							</Typography>
+						</Grid>
+						<Grid item className={classes.gridItems}>
+							<Typography variant="body" className={classes.typography}>
+								Time
+							</Typography>
+							
+						</Grid>
+						<Grid item className={classes.gridItems}>
+							<Typography variant="body" className={classes.typography}>
+								Date
+							</Typography>
+							
+						</Grid>
+						<Grid item className={classes.gridItems}>
+							<Typography variant="body" className={classes.typography}>
+								Location
+							</Typography>
+							
+						</Grid>
+						<Grid item className={classes.gridItems}>
+							<Typography variant="body" className={classes.typography}>
+								Status
+							</Typography>
+							
+						</Grid>
+						<Grid item className={classes.gridItems}>
+							<Typography variant="body" className={classes.typography}>
+								Observation
+							</Typography>
+							
+						</Grid>
+					</Grid>
+					<Grid className={classes.gridcontainerbody}  container>
+						<Grid item className={classes.gridItems} >
+							<Typography variant="body" className={classes.typography}>
+								{item.number}
+							</Typography>
+						</Grid>
+							<Grid item className={classes.gridItems}>
+							<Typography variant="body" className={classes.typography}>
+								{item.timeevents}
+							</Typography>
+							
+							</Grid>
+							<Grid item className={classes.gridItems}>
+							<Typography variant="body" className={classes.typography}>
+								{item.dateevents}
+							</Typography>
+							
+							</Grid>
+							<Grid item className={classes.gridItems}>
+							<Typography variant="body" className={classes.typography}>
+								{item.currentlocation}
+							</Typography>
+							
+							</Grid>
+							<Grid item className={classes.gridItems}>
+							<Typography variant="body" className={classes.typography}>
+								{item.shippingstatus}
+							</Typography>
+							
+							</Grid>
+							<Grid item className={classes.gridItems}>
+							<Typography variant="body" className={classes.typography}>
+								{item.notes}
+							</Typography>
+							
+							</Grid>
+
+						</Grid>
 			</Box>
 
 
 
 
 
-			<div key={content ? content._id : null} className="shipment-content-table">
-				<div className="shipment-content-table-content">
-					{/* {
-				content.createdAt !== content.date ? (
-					): <p>There is nothin here</p>
-				} */}
-
-					{	
-						listItem.length <= 1 ? listItem.map ( 
-							el => 
-							<div className="shipment-content-table-content-topic">
-								<p className="shipment-content-table-content-topic-hash">#</p>
-								<p className="shipment-content-table-content-topic-date">
-									{content ? dateString.toString()  : null}
-									{/* {content ? content._id  : null} */}
-								</p>
-								<p className="shipment-content-table-content-topic-location">
+			{/* <div key={item ? item._id : null} className="shipment-item-table">
+				<div className="shipment-item-table-item">
+					
+							<div className="shipment-item-table-item-topic">
+								<p className="shipment-item-table-item-topic-hash">#</p>
+								<p className="shipment-item-table-item-topic-date">
+									{item ? item.dateevents  : null}
+									{/* {item ? item._id  : null} */}
+								{/* </p>
+								<p className="shipment-item-table-item-topic-location">
 									Location
 								</p>
-								<p className="shipment-content-table-content-topic-time">Time</p>
-								<p className="shipment-content-table-content-topic-pieces">
+								<p className="shipment-item-table-item-topic-time">Time</p>
+								<p className="shipment-item-table-item-topic-pieces">
 									Pieces
 								</p>
-							</div>
-						) : null
-					}
+							</div> */}
+						
 
-					{[content].map(() => (
-						<>
-							<div className="shipment-content-table-content-info">
-								<p className="shipment-content-table-content-topic-hash">
+					{/* // {[item].map(() => ( */}
+					{/* // 	<> */}
+							
+							{/* <div className="shipment-item-table-item-info">
+								<p className="shipment-item-table-item-topic-hash">
 									<span className="shipment-header-phone-only">
 										No: 
 									</span>
-									{filtered  ? filtered.length : null}
+									{item  ? item.length : null}
 								</p>
-								<p className="shipment-content-table-content-topic-date">
+								<p className="shipment-item-table-item-topic-date">
 									<span className="shipment-header-phone-only">
 										Observation: 
 									</span>
-									{content ? content.notes : null}
+									{item ? item.notes : null}
 								</p>
-								<p className="shipment-content-table-content-topic-location">
+								<p className="shipment-item-table-item-topic-location">
 									<span className="shipment-header-phone-only">
 										Location : 
 									</span>
-									{content ? content.currentlocation : null}
+									{item ? item.currentlocation : null}
 								</p>
-								<p className="shipment-content-table-content-topic-time">
+								<p className="shipment-item-table-item-topic-time">
 									<span className="shipment-header-phone-only">
 										Time : 
 									</span>
-									{content ? content.timeevents : null}
+									{item ? item.timeevents : null}
 								</p>
-								<p className="shipment-content-table-content-topic-pieces">
+								<p className="shipment-item-table-item-topic-pieces">
 									<span className="shipment-header-phone-only">
 										Pieces: 
 									</span>
-									{content ? content.pieces : null} pieces
+									{item ? item.pieces : null} pieces
 								</p>
-							</div>
-						</>
-					))}
-				</div>
-			</div>
-		</>
+							</div> */}
+						{/* </> */}
+					{/* // ))} */}
+				{/* // </div> */}
+			{/* // </div> */}
+		</Container>
 	);
 };
 
-export default ShipmentTableContent;
+export default ShipmentTableitem;

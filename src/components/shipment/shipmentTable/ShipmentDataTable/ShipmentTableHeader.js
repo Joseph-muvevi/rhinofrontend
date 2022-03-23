@@ -25,17 +25,12 @@ const ShipmentTableHeader = ({ headers }) => {
 		}
 	}))
 
-  const [date, setDate] = useState({})
-
-  useEffect(() => {
-	  if (headers){
-		setDate(headers.currentdate)
-	  }
-  }, [])
 
 
-  const dateString = moment(date).format('MMMM Do YYYY') 
-  console.log(dateString, "the date string")
+//   const dateString = moment(date).format('MMMM Do YYYY') 
+//   console.log(dateString, "the date string")
+
+//   console.log("The result header item is", header)
 
   const classes = tableHeader()
 
@@ -56,11 +51,12 @@ const ShipmentTableHeader = ({ headers }) => {
 						</h3>
 						<h3 className="shipment-table-headers-p">
 						<span className="grey-item-container-shipment-arrow">
-							{header ? header.notes : null}
+							{header ? header.formitems[0].notes : null}
 						</span>
 						</h3>
 						<h3 className="shipment-table-headers-h3">
-							Shipper
+							Shipper : 
+							
 						</h3>
 						<p className="shipment-table-headers-p">
 							<FontAwesomeIcon
@@ -70,7 +66,7 @@ const ShipmentTableHeader = ({ headers }) => {
 							/>
 							
 							
-							{ header ? header.company : null }
+							{header ? header.shippersfullname: null}
 						</p>
 						<h3 className="shipment-table-headers-h3">Address</h3>
 						<p className="shipment-table-headers-p">
@@ -79,14 +75,14 @@ const ShipmentTableHeader = ({ headers }) => {
 								className="fontawesome-chrevron"
 								color="white"
 							/>
-							{ header ? header.shipaddress : null }
+							{ header ? header.shippersaddress : null }
 						</p>
 					</div>
 				</Grid>
 				<Grid item md={4} sm={13} className="shipment-tabe-headers-middle">
 					<div className="shipment-table-headers-body">
 						<h3 className="shipment-table-headers-h3">
-						{ header ? dateString.toString() : null }
+						{ header ? header.date : null }
 						</h3>
 						<div className="h3-p-enclosing">
 							<h3 className="shipment-table-headers-h3">
@@ -156,7 +152,7 @@ const ShipmentTableHeader = ({ headers }) => {
 						<div className="shipment-table-headers-h3-sign">
 							<h3 className="shipment-table-headers-h3">Signed for by :</h3>
 							<p className="shipment-table-headers-p-sign">
-								{ header ? header.collectedby : null }
+								{ header ? header.collectorfullname : null }
 								{/*
 									if collected enter [SINGED UP FOR BY NAME OF THE RECEIVER]
 								*/}
