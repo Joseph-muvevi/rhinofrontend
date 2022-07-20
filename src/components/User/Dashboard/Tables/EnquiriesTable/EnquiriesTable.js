@@ -19,6 +19,7 @@ const EnquiriesTable = () => {
 	useEffect(() => {
 		axios
 			.get("https://rhinojohnbackend.herokuapp.com/api/quotation")
+			// .get("http://localhost:7000/api/quotation/all")
 			.then((res) => setEnquiries(res.data))
 			.catch((err) => console.log(err));
 	});

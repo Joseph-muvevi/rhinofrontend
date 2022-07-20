@@ -30,11 +30,15 @@ const ShipmentTableitem = ({result, item}) => {
 		},
 		gridItems:{
 			minWidth: "150px",
+			maxWidth: "320px",
 			marginTop: "20px",
 			marginBottom: "20px",
+			paddingLeft: "10px",
+			paddingRight: "10px",
 		},
 		typography: {
-			color: theme.palette.text.light
+			color: theme.palette.text.light,
+			textAlign: "left"
 		}
 	}))
 
@@ -48,36 +52,36 @@ const ShipmentTableitem = ({result, item}) => {
 			<Box className={classes.wrapper}>
 					<Grid spacing={2} className={classes.gridcontainerheader} container>
 						<Grid item className={classes.gridItems}>
-							<Typography variant="body" className={classes.typography}>
+							<Typography variant="body" className={classes.typography} align="left">
 								No
 							</Typography>
 						</Grid>
 						<Grid item className={classes.gridItems}>
-							<Typography variant="body" className={classes.typography}>
+							<Typography variant="body" className={classes.typography} align="left">
 								Time
 							</Typography>
 							
 						</Grid>
 						<Grid item className={classes.gridItems}>
-							<Typography variant="body" className={classes.typography}>
+							<Typography variant="body" className={classes.typography} align="left">
 								Date
 							</Typography>
 							
 						</Grid>
 						<Grid item className={classes.gridItems}>
-							<Typography variant="body" className={classes.typography}>
+							<Typography variant="body" className={classes.typography} align="left">
 								Location
 							</Typography>
 							
 						</Grid>
 						<Grid item className={classes.gridItems}>
-							<Typography variant="body" className={classes.typography}>
+							<Typography variant="body" className={classes.typography} align="left">
 								Status
 							</Typography>
 							
 						</Grid>
 						<Grid item className={classes.gridItems}>
-							<Typography variant="body" className={classes.typography}>
+							<Typography variant="body" className={classes.typography} align="left">
 								Observation
 							</Typography>
 							
@@ -85,36 +89,36 @@ const ShipmentTableitem = ({result, item}) => {
 					</Grid>
 					<Grid className={classes.gridcontainerbody}  container>
 						<Grid item className={classes.gridItems} >
-							<Typography variant="body" className={classes.typography}>
+							<Typography variant="body" className={classes.typography} align="left">
 								{item.number}
 							</Typography>
 						</Grid>
 							<Grid item className={classes.gridItems}>
-							<Typography variant="body" className={classes.typography}>
+							<Typography variant="body" className={classes.typography} align="left">
 								{item.timeevents}
 							</Typography>
 							
 							</Grid>
 							<Grid item className={classes.gridItems}>
-							<Typography variant="body" className={classes.typography}>
+							<Typography variant="body" className={classes.typography} align="left">
 								{item.dateevents}
 							</Typography>
 							
 							</Grid>
 							<Grid item className={classes.gridItems}>
-							<Typography variant="body" className={classes.typography}>
+							<Typography variant="body" className={classes.typography} align="left">
 								{item.currentlocation}
 							</Typography>
 							
 							</Grid>
 							<Grid item className={classes.gridItems}>
-							<Typography variant="body" className={classes.typography}>
+							<Typography variant="body" className={classes.typography} align="left">
 								{item.shippingstatus}
 							</Typography>
 							
 							</Grid>
 							<Grid item className={classes.gridItems}>
-							<Typography variant="body" className={classes.typography}>
+							<Typography variant="body" className={classes.typography} align="left">
 								{item.notes}
 							</Typography>
 							

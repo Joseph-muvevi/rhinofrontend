@@ -21,9 +21,10 @@ const ShipmentTableHeader = ({ headers }) => {
 			borderTopRightRadius: 2,
 			display: "flex",
 			alignItems: "flex-start",
-			// padding: "10px"
+			padding: "10px"
 		}
 	}))
+
 
 
 
@@ -110,6 +111,20 @@ const ShipmentTableHeader = ({ headers }) => {
 									color="white"
 								/>
 								{header ? header.arrivalcity : null}
+							</p>
+						</div>		
+						<div className="h3-p-enclosing">
+							<h3 className="shipment-table-headers-h3">
+								Product Details:
+							</h3>
+							<p className="shipment-table-headers-p">
+								<FontAwesomeIcon
+									icon={faChevronRight}
+									size="1x"
+									className="fontawesome-chrevron"
+									color="white"
+								/>
+								{header ? header.itemsname : null}
 							</p>
 						</div>
 					</div>

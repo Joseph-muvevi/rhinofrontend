@@ -98,11 +98,11 @@ const StorageFooter = () => {
 						<ul className="storage-footer-ul">
 							<li className="storage-footer-li">
 								<FontAwesomeIcon icon={faMapMarkerAlt} /> 
-								Karen Nairobi Kenya
+								Karen Nairobi
 							</li>
 							<li className="storage-footer-li">
 								<FontAwesomeIcon icon={faPhoneAlt} />
-								+254 20 869 3000
+								07211432145 
 							</li>
 							<li className="storage-footer-li">
 								<FontAwesomeIcon icon={faMailBulk} />

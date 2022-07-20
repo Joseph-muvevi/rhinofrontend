@@ -98,11 +98,11 @@ const LogisticsFooter = () => {
 						<ul className="logistics-footer-ul">
 							<li className="logistics-footer-li">
 								<FontAwesomeIcon icon={faMapMarkerAlt} /> 
-								Karen Nairobi Kenya
+								Karen Nairobi
 							</li>
 							<li className="logistics-footer-li">
 								<FontAwesomeIcon icon={faPhoneAlt} />
-								+254 20 869 3000
+								+07211432145 
 							</li>
 							<li className="logistics-footer-li">
 								<FontAwesomeIcon icon={faMailBulk} />

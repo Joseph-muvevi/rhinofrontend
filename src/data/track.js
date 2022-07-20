@@ -1,5 +1,125 @@
 export const shipping = [
     {
+        _id: "62367ef38b354550af8cc788",
+        trackno: "60606062",
+        shippersfullname: "Atica East Africa Co. Ltd",
+        departurecity: "Nairobi",
+        departurecountry: "Kenya",
+        departuredate: "23/03/2022",
+        consignfullnames: "Gabriel Arturo Ortiz",
+        collectorfullname: "TBA",
+        collectoraddress: "TBA",
+        collectortel: "+8187495570",
+        itemsname: "Gold Bars (8 Kgs)",
+        departuretime: "23:20",
+        arrivalcity: "Los Angeles",
+        arrivalcountry: "United States of America",
+        arrivaltime: "12:05",
+        arrivaldate: "31/03/2022",
+        shippersemail: "shippersidno@mail.com",
+        shippersidno: "shippersidno@mail.com",
+        shipperstelephone: "8187495570",
+        shipperscompany: "Atica East Africa Co. Ltd",
+        shippersaddress: "Dar es Salaam, Tanzania",
+        consigntelephone: "8187495570",
+        consignemail: "consignemail@mail.com",
+        consigncompany: "Atica North America LLC",
+        consignaddress: "Unit5, 12850 Oxnard St., North Hollywood, California, USA",
+        cosignidno: "cosignidno",
+        logisticstype: "logisticstype",
+        itemsweight: 8,
+        itemsweightunit: "Kilograms",
+        itemsproducttype: "itemsproducttype",
+        itemspieces: 1,
+        itemsquality: "Gold Bars 97% (23 Karats)",
+        quantifiableunit: "sdfsdfsdfsdf",
+        date: "March 29 2022",
+        formitems: [
+            {
+                number:9,
+                timeevents: "08:22",
+                dateevents: "29/03/2022",
+                currentlocation: "Warsaw",
+                shippingstatus: "Processing",
+                notes: "8 Kilograms Gold bars export documentation check for shipment continuation to Los Angeles (LAX)",
+                _id: "62367f16asxwe0am8cc77a"
+            },
+            {
+                number:8,
+                timeevents: "18:47",
+                dateevents: "28/03/2022",
+                currentlocation: "Warsaw",
+                shippingstatus: "Arrived",
+                notes: "8 Kilograms Gold bars arrived in Warsaw (WAW) awaiting connection to (LAX)",
+                _id: "62367f16asxwe0al8cc77a"
+            },
+            {
+                number:7,
+                timeevents: "17:10",
+                dateevents: "28/03/2022",
+                currentlocation: "Istanbul",
+                shippingstatus: "Departed",
+                notes: "8 Kilograms Gold bars departed for Los Angeles (LAX) Via Warsaw (WAW)",
+                _id: "62367f16asxwe0ak8cc77a"
+            },
+            {
+                number:6,
+                timeevents: "15:11",
+                dateevents: "28/03/2022",
+                currentlocation: "Istanbul",
+                shippingstatus: "Processing",
+                notes: "8 Kilograms Gold bars moved to the export bay pending clearance for departure to (LAX)/Los Angeles via (WAW)/Poland",
+                _id: "62367f16asxwe0aj8cc77a"
+            },
+            {
+                number:5,
+                timeevents: "05:40",
+                dateevents: "24/03/2022",
+                currentlocation: "Istanbul",
+                shippingstatus: "Arrived",
+                notes: "8 Kilograms Gold bars arrived in Istanbul (IST) awaiting connection to (LAX)",
+                _id: "62367f16asxwe0ai8cc77a"
+            },
+            {
+                number:4,
+                timeevents: "23:30",
+                dateevents: "23/03/2022",
+                currentlocation: "Nairobi",
+                shippingstatus: "Departed",
+                notes: "8 Kilograms Gold bars departed for Los Angeles (LAX) Via Istanbul (IST)",
+                _id: "62367f16asxwe0ah8cc77a"
+            },
+            {
+                number:3,
+                timeevents: "22:30",
+                dateevents: "23/03/2022",
+                currentlocation: "Nairobi",
+                shippingstatus: "Processed",
+                notes: "8 Kilograms Gold bars ready for departure NBO-IST-LAX. [Departure/date/time(NBO): 23/03/2022@23:20] / [Arrival/date/time(IST): 24/03/2022@05:20]",
+                _id: "62367f16asxwe0ae8cc77a"
+            },
+            {
+                number:2,
+                timeevents: "21:59",
+                dateevents: "23/03/2022",
+                currentlocation: "Nairobi",
+                shippingstatus: "Processing",
+                notes: "8 Kilograms Gold bars at customs booked for departure NBO-IST-LAX",
+                _id: "62367f16asxwe0af8cc77a"
+            },
+            {
+                number:1,
+                timeevents: "21:40",
+                dateevents: "23/03/2022",
+                currentlocation: "Nairobi",
+                shippingstatus: "Processing",
+                notes: "8 Kilograms Gold bars processed for export pending airline booking",
+                _id: "62367wefw35t2ec8cc77a"
+            },
+        ],
+        "__v": 0
+    },
+    {
         _id: "62367ef38b354550af8cc774",
         trackno: "trackinfo",
         shippersfullname: "shippersfullname",
@@ -41,7 +161,7 @@ export const shipping = [
                 dateevents: "sdfsdf",
                 currentlocation: "currentlocation",
                 shippingstatus: "shippingstatus",
-                notes: "notes notes characters for this field is 3,minimum",
+                notes: "notes notes characters for this field is 3,minimum sdcdc sdc sdc s dc sdc s dc s dc qsd c as dca sdc as dc asdc as dc",
                 _id: "62367f16asxwe0af8cc77a"
             },
             {

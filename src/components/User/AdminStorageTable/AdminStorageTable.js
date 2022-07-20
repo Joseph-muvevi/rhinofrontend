@@ -22,6 +22,7 @@ const AdminStorageTable = () => {
 	useEffect(() => {
 		axios
 			.get(`https://rhinojohnbackend.herokuapp.com/api/storageshipment`)
+			// .get(`http://localhost:7000/api/storage/all`)
 			.then((res) => {
 				setAdminStorage(res.data);
 			})

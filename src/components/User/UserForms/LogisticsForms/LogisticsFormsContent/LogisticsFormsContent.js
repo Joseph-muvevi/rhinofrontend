@@ -16,131 +16,79 @@ const logisticsFormStyles = makeStyles({
 	}
 })
 
-// .of(
-// 	Yup.object().shape({
-// 		fullnames: Yup.string().required().min(3).max(100),
-// 		email: Yup.string().required().min(3).max(100),
-// 		company: Yup.string().required().min(3).max(100),
-// 		shipaddress: Yup.string().required().min(3).max(100),
-// 		consignfullnames: Yup.string().required().min(3).max(100),
-// 		consignemail: Yup.string().required().min(3).max(100),
-// 		consigncompany: Yup.string().required().min(3).max(100),
-// 		consignaddress: Yup.string().required().min(3).max(100),
-// 		departurecity: Yup.string().required().min(3).max(50),
-// 		departurecountry: Yup.string().required().min(3).max(50),
-// 		arrivalcity: Yup.string().required().min(3).max(50),
-// 		arrivalcountry: Yup.string().required().min(3).max(50),
-// 		logisticstype: Yup.string().required().min(3).max(50),
-// 		weight: Yup.number().required().min(1).max(50000000),
-// 		weightunit: Yup.string().required().min(1).max(50),
-// 		producttype: Yup.string().required().min(3).max(50),
-// 		pieces: Yup.number().required().min(1).max(50000000),
-// 		departuredate: Yup.string().required().min(3).max(100),
-// 		departuretime: Yup.string().required().min(3).max(100),
-// 		arrivaldate: Yup.string().required().min(3).max(100),
-// 		quality: Yup.string().required().min(3).max(100),
-// 		product: Yup.string().required().min(3).max(100),
-// 		notes: Yup.string().required().min(20).max(2000),
-// 		idno: Yup.string().required().min(5).max(30),
-// 		unit: Yup.string().required().min(2).max(100),
-// 		timeevents: Yup.string().min(4).max(10).required(),
-// 		arrivaltime: Yup.string().min(5).max(30),
-// 		collectoraddress: Yup.string().min(3).max(100),
-// 		collectortel: Yup.string().min(3).max(100),
-// 		collectedby: Yup.string().min(3).max(100),
-// 		currentlocation: Yup.string().min(3).max(100),
-// 		currentdate: Yup.string().min(3).max(100),
-// 		status: Yup.string().min(3).max(100).required(),
-// 		completed: Yup.boolean().oneOf([true, false]),
-// 	})
-// )
-
-// formData: [{
-// 	fullnames: "",
-// 	email: "",
-// 	company: "",
-// 	shipaddress: "",
-// 	consignfullnames: "",
-// 	consignemail: "",
-// 	consigncompany: "",
-// 	consignaddress: "",
-// 	departurecity: "",
-// 	departurecountry: "",
-// 	arrivalcity: "",
-// 	arrivalcountry: "",
-// 	logisticstype: "",
-// 	weight: "",
-// 	weightunit: "",
-// 	producttype: "",
-// 	pieces: "",
-// 	departuredate: "",
-// 	departuretime: "",
-// 	arrivaldate: "",
-// 	quality: "",
-// 	notes: "",
-// 	idno: "",
-// 	unit: "",
-// 	arrivaltime: "",
-// 	timeevents: "",
-// 	collectedby: "",
-// 	collectoraddress: "",
-// 	collectortel: "",
-// 	completed: "",
-// 	currentlocation: "",
-// 	currentdate: "",
-// 	status: "",
-// 	product: "",
-// }]
-
 
 const LogisticsFormsContent = ({setModalIsOpen}) => {
-	const [error, setErrors] = useState("");
+	const [errors, setErrors] = useState("");
 	
 	
 	const formik = useFormik({
 		initialValues: {
-			itemtrackno: "",
-			formData: [{
-				shippersfirstname: "",
-				shipperslastname: "",
-				shippersemail: "",
-				shippersidno: "",
-				shipperstelephone: "",
-				shipperscompany: "",
-				shippersaddress: "",
-				consignfirstname: "",
-				consignlastname: "",
-				consigntelephone: "",
-				consignemail: "",
-				consigncompany: "",
-				consignaddress: "",
-				cosignidno: "",
-				departurecity: "",
-				departurecountry: "",
-				departuredate: "",
-				departuretime: "",
-				arrivalcity: "",
-				arrivalcountry: "",
-				arrivaltime: "",
-				arrivaldate: "",
-				logisticstype: "",
-				itemsweight: "",
-				itemsweightunit: "",
-				itemsproducttype: "",
-				itemspieces: "",
-				itemsquality: "",
-				timeevents: "",
-				dateevents: "",
-				quantifiableunit: "",
-				collectorfirstname: "",
-				collectorlastname: "",
-				itemsname: "",
-				currentlocation: "",
-			}]
+			trackno:"",
+			shippersfullname:"",
+			departurecity:"",
+			departurecountry:"",
+			departuredate:"",
+			consignfullnames:"",
+			collectorfullname:"",
+			collectoraddress:"",
+			collectortel:"",
+			itemsname:"",
+			departuretime:"",
+			arrivalcity:"",
+			arrivalcountry:"",
+			arrivaltime:"",
+			arrivaldate:"",
+			shippersemail:"",
+			shippersidno:"",
+			shipperstelephone:"",
+			shipperscompany:"",
+			shippersaddress:"",
+			consigntelephone:"",
+			consignemail:"",
+			consigncompany:"",
+			consignaddress:"",
+			logisticstype:"",
+			itemsweight:"",
+			itemsweightunit:"",
+			itemsproducttype:"",
+			itemspieces:"",
+			itemsquality:"",
+			quantifiableunit:"",
+			// events:""
 		},
 		validationSchema: Yup.object().shape({
-			itemtrackno: Yup.string().required().min(3).max(100),
-			formData: Yup.array()
+			trackno:			Yup.string().required().min(3).max(100),
+			shippersfullname:	Yup.string().required().min(3).max(100),
+			shippersemail:		Yup.string().required().min(3).max(100),
+			shipperscompany:	Yup.string().required().min(3).max(100),
+			shippersidno:		Yup.string().required().min(3).max(100),
+			shipperstelephone:	Yup.string().required().min(3).max(100),
+			shippersaddress:	Yup.string().required().min(3).max(100),
+			consignfullnames:	Yup.string().required().min(3).max(100),
+			consignemail:		Yup.string().required().min(3).max(100),
+			consigntelephone:	Yup.string().required().min(3).max(100),
+			consigncompany:		Yup.string().required().min(3).max(100),
+			consignaddress:		Yup.string().required().min(3).max(100),
+			departurecity:		Yup.string().required().min(3).max(100),
+			departurecountry:	Yup.string().required().min(3).max(100),
+			departuredate:		Yup.string().required().min(3).max(100),
+			departuretime:		Yup.string().required().min(3).max(100),
+			collectorfullname:	Yup.string().required().min(3).max(100),
+			collectortel:		Yup.string().required().min(3).max(100),
+			collectoraddress:	Yup.string().required().min(3).max(100),
+			itemsname:			Yup.string().required().min(3).max(100),
+			arrivalcity:		Yup.string().required().min(3).max(100),
+			arrivalcountry:		Yup.string().required().min(3).max(100),
+			arrivaldate:		Yup.string().required().min(3).max(100),
+			arrivaltime:		Yup.string().required().min(3).max(100),
+			logisticstype:		Yup.string().required().min(3).max(100),
+			itemsweight:		Yup.number().required().min(1).max(999999999),
+			itemsweightunit:	Yup.string().required().min(3).max(100),
+			itemsproducttype:	Yup.string().required().min(3).max(100),
+			itemspieces:		Yup.number().required().min(1).max(999999999),
+			quantifiableunit:	Yup.string().required().min(3).max(100),
+			itemsquality:		Yup.string().required().min(3).max(100)
+		// 	// events:				Yup.array()
 
 		}),
 		onSubmit: (values, { resetForm }) => {
@@ -148,129 +96,190 @@ const LogisticsFormsContent = ({setModalIsOpen}) => {
 				axios
 					.post(
 						// "https://rhinojohnbackend.herokuapp.com/api/logisticsrecords",
-						"http://localhost:9000/api/shipment/post",
+						// "http://localhost:9000/api/shipment/post",
+						"http://localhost:7000/api/shipping/post",
 						values
 					)
 					.then((res) => {
-						console.log(res, "this is the res data");
+						// alert(JSON.stringify(values))
+						alert("The response is",res)
 					})
 					.catch((err) => {
-						console.log(err, "this is the error data");
-						// setErrors(err.response.data.message);
+						console.log(err.response, "this is the error data");
+						setErrors(err.response.data.error);
 					});
-				alert(JSON.stringify(values, null, 2));
-				// console.log(values);
-				resetForm({ values: "" });
-			} catch (err) {
-				console.log("The ctch error is", err);
-			}
-		},
-	});
-
-	const classes = logisticsFormStyles()
-
-	return (
-		<Box clasName={classes.wrapper}>
+					alert(JSON.stringify(values, null, 2));
+					// console.log(values);
+					resetForm({ values: "" });
+				} catch (err) {
+					console.log("Submit Error: ", err);
+				}
+			},
+		});
+		
+		const classes = logisticsFormStyles()
+		
+		return (
+			<Box clasName={classes.wrapper}>
+			{console.log("The error state is",errors)}
 				<div className="logistics-quotation-form">
 
 				<div className="logistics-quotation-form-content">
 					<form
 						onSubmit={formik.handleSubmit}
 						className="the-logistics-quotation-form">
-						{error ? (
+						{errors ? (
 							<div className="service-quotation-small-inputs">
 								<div className="error-section">
 									<FontAwesomeIcon
 										icon={faExclamationTriangle}
 										size="2x"
 									/>
-									<p className="error-section-p">{error}</p>
+									<p className="error-section-p">{errors}</p>
 								</div>
 							</div>
 						) : null}
 						<div className="logistics-quotation-small-inputs">
 							<div className="logistics-quotation-small-input-group">
-								<label>Shipperfullnames</label>
+								<label>Track number</label>
 								<input
 									className="logistics-input-fields"
 									type="text"
-									placeholder="Shipper fullnames"
-									name="fullnames"
+									placeholder="Register a unique track number"
+									name="trackno"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
-									value={formik.values.fullnames}
+									value={formik.values.trackno}
 									required
 								/>
-								{formik.touched.fullnames &&
-								formik.errors.fullnames ? (
+								{formik.touched.trackno && formik.errors.trackno ? (
 									<div className="error">
-										{formik.errors.fullnames}
+										{formik.errors.trackno}
 									</div>
 								) : null}
 							</div>
 							<div className="logistics-quotation-small-input-group">
-								<label>Shipper email</label>
+								<label>Shipper Fullname</label>
+								<input
+									className="logistics-input-fields"
+									type="text"
+									placeholder="Enter Shipper's fullname"
+									name="shippersfullname"
+									onChange={formik.handleChange}
+									onBlur={formik.handleBlur}
+									value={formik.values.shippersfullname}
+									required
+								/>
+								{formik.touched.shippersfullname &&
+								formik.errors.shippersfullname ? (
+									<div className="error">
+										{formik.errors.shippersfullname}
+									</div>
+								) : null}
+							</div>
+							<div className="logistics-quotation-small-input-group">
+								<label>Shipper's Email</label>
 								<input
 									className="logistics-input-fields"
 									type="email"
 									placeholder="Shipper email"
-									name="email"
+									name="shippersemail"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
-									value={formik.values.email}
+									value={formik.values.shippersemail}
 									required
 								/>
-								{formik.touched.email && formik.errors.email ? (
+								{formik.touched.shippersemail && formik.errors.shippersemail ? (
 									<div className="error">
-										{formik.errors.email}
+										{formik.errors.shippersemail}
 									</div>
 								) : null}
 							</div>
 							<div className="logistics-quotation-small-input-group">
-								<label>Shipper Company</label>
+								<label>Shipper's Company</label>
 								<input
 									className="logistics-input-fields"
 									type="text"
 									placeholder="Shipper Company"
-									name="company"
+									name="shipperscompany"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
-									value={formik.values.company}
+									value={formik.values.shipperscompany}
 									required
 								/>
-								{formik.touched.company && formik.errors.company ? (
+								{formik.touched.shipperscompany && formik.errors.shipperscompany ? (
 									<div className="error">
-										{formik.errors.company}
+										{formik.errors.shipperscompany}
 									</div>
 								) : null}
 							</div>
 						
 							<div className="logistics-quotation-small-input-group">
-								<label>Shipper Address</label>
+								<label>Shipper ID/Passport Number</label>
 								<input
 									className="logistics-input-fields"
 									type="text"
-									placeholder="Shipper Address"
-									name="shipaddress"
+									placeholder="Enter shipper's ID/Passport number"
+									name="shippersidno"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
-									value={formik.values.shipaddress}
+									value={formik.values.shippersidno}
 									required
 								/>
-								{formik.touched.shipaddress &&
-								formik.errors.shipaddress ? (
+								{formik.touched.shippersidno &&
+								formik.errors.shippersidno ? (
 									<div className="error">
-										{formik.errors.shipaddress}
+										{formik.errors.shippersidno}
+									</div>
+								) : null}
+							</div>
+
+							<div className="logistics-quotation-small-input-group">
+								<label>Shipper Telephone Number</label>
+								<input
+									className="logistics-input-fields"
+									type="tel"
+									placeholder="Enter shipper's phone number"
+									name="shipperstelephone"
+									onChange={formik.handleChange}
+									onBlur={formik.handleBlur}
+									value={formik.values.shipperstelephone}
+									required
+								/>
+								{formik.touched.shipperstelephone &&
+								formik.errors.shipperstelephone ? (
+									<div className="error">
+										{formik.errors.shipperstelephone}
+									</div>
+								) : null}
+							</div>
+
+							<div className="logistics-quotation-small-input-group">
+								<label>Shipper's Address</label>
+								<input
+									className="logistics-input-fields"
+									type="text"
+									placeholder="Enter shipper's address"
+									name="shippersaddress"
+									onChange={formik.handleChange}
+									onBlur={formik.handleBlur}
+									value={formik.values.shippersaddress}
+									required
+								/>
+								{formik.touched.shippersaddress &&
+								formik.errors.shippersaddress ? (
+									<div className="error">
+										{formik.errors.shippersaddress}
 									</div>
 								) : null}
 							</div>
 						
 							<div className="logistics-quotation-small-input-group">
-								<label>Consignee ullnames</label>
+								<label>Consignee Fullnames</label>
 								<input
 									className="logistics-input-fields"
 									type="text"
-									placeholder="Consignee fullnames"
+									placeholder="Enter consignee fullnames"
 									name="consignfullnames"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
@@ -304,11 +313,30 @@ const LogisticsFormsContent = ({setModalIsOpen}) => {
 								) : null}
 							</div>
 							<div className="logistics-quotation-small-input-group">
+								<label>Consignee Telephone</label>
+								<input
+									className="logistics-input-fields"
+									type="tel"
+									placeholder="Consignee Email"
+									name="consigntelephone"
+									onChange={formik.handleChange}
+									onBlur={formik.handleBlur}
+									value={formik.values.consigntelephone}
+									required
+								/>
+								{formik.touched.consigntelephone &&
+								formik.errors.consigntelephone ? (
+									<div className="error">
+										{formik.errors.consigntelephone}
+									</div>
+								) : null}
+							</div>
+							<div className="logistics-quotation-small-input-group">
 								<label>Consignee company</label>
 								<input
 									className="logistics-input-fields"
 									type="text"
-									placeholder="Consignee company<"
+									placeholder="Enter consignee's company"
 									name="consigncompany"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
@@ -328,7 +356,7 @@ const LogisticsFormsContent = ({setModalIsOpen}) => {
 								<input
 									className="logistics-input-fields"
 									type="text"
-									placeholder="Consignee address here..."
+									placeholder="Enter consignee's address"
 									name="consignaddress"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
@@ -343,86 +371,11 @@ const LogisticsFormsContent = ({setModalIsOpen}) => {
 								) : null}
 							</div>
 							<div className="logistics-quotation-small-input-group">
-								<label>Weight unit</label>
-								<select
-									type="text"
-									name="weightunit"
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									value={formik.values.weightunit}
-									required>
-									<option
-										value=""
-										disabled
-										label="Please select an option"
-									/>
-									<option value="kg" label="Kilograms" />
-									<option value="t" label="Tonnes" />
-									<option value="lb" label="pounds" />
-									<option value="g" label="grams" />
-									<option value="l" label="Liters" />
-									<option value="gal" label="Gallons" />
-								</select>
-								{formik.touched.weightunit &&
-								formik.errors.weightunit ? (
-									<div className="error">
-										{formik.errors.weightunit}
-									</div>
-								) : null}
-							</div>
-							<div className="logistics-quotation-small-input-group">
-								<label>Weight</label>
-								<input
-									className="logistics-input-fields"
-									type="number"
-									placeholder="The weight of the item..."
-									name="weight"
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									value={formik.values.weight}
-									required
-								/>
-								{formik.touched.weight && formik.errors.weight ? (
-									<div className="error">
-										{formik.errors.weight}
-									</div>
-								) : null}
-							</div>
-							<div className="logistics-quotation-small-input-group">
-								<label>Product Type</label>
-								<select
-									type="text"
-									name="producttype"
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									value={formik.values.producttype}
-									required>
-									<option
-										value=""
-										disabled
-										label="Please select an option"
-									/>
-									<option
-										value="solid"
-										label="Solid"
-										defaultValue
-									/>
-									<option value="liquid" label="Liquid" />
-									<option value="gas" label="Gas" />
-								</select>
-								{formik.touched.producttype &&
-								formik.errors.producttype ? (
-									<div className="error">
-										{formik.errors.producttype}
-									</div>
-								) : null}
-							</div>
-							<div className="logistics-quotation-small-input-group">
 								<label>Departure city</label>
 								<input
 									className="logistics-input-fields"
 									type="text"
-									placeholder="What is your city..."
+									placeholder="Enter the city of departure"
 									name="departurecity"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
@@ -441,7 +394,7 @@ const LogisticsFormsContent = ({setModalIsOpen}) => {
 								<input
 									className="logistics-input-fields"
 									type="text"
-									placeholder="What is your country..."
+									placeholder="Enter the country of departure"
 									name="departurecountry"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
@@ -452,6 +405,120 @@ const LogisticsFormsContent = ({setModalIsOpen}) => {
 								formik.errors.departurecountry ? (
 									<div className="error">
 										{formik.errors.departurecountry}
+									</div>
+								) : null}
+							</div>
+							<div className="logistics-quotation-small-input-group">
+								<label>Date of departure</label>
+								<input
+									className="logistics-input-fields"
+									type="date"
+									placeholder="Enter the date of departure"
+									name="departuredate"
+									onChange={formik.handleChange}
+									onBlur={formik.handleBlur}
+									value={formik.values.departuredate}
+									required
+								/>
+								{formik.touched.departuredate &&
+								formik.errors.departuredate ? (
+									<div className="error">
+										{formik.errors.departuredate}
+									</div>
+								) : null}
+							</div>
+							<div className="logistics-quotation-small-input-group">
+								<label>Time of departure</label>
+								<input
+									className="logistics-input-fields"
+									type="time"
+									placeholder="Time in..."
+									name="departuretime"
+									onChange={formik.handleChange}
+									onBlur={formik.handleBlur}
+									value={formik.values.departuretime}
+									required
+								/>
+								{formik.touched.departuretime &&
+								formik.errors.departuretime ? (
+									<div className="error">
+										{formik.errors.departuretime}
+									</div>
+								) : null}
+							</div>
+							<div className="logistics-quotation-small-input-group">
+								<label>Collector's Fullname</label>
+								<input
+									className="logistics-input-fields"
+									type="text"
+									placeholder="Enter the collectors fullname"
+									name="collectorfullname"
+									onChange={formik.handleChange}
+									onBlur={formik.handleBlur}
+									value={formik.values.collectorfullname}
+									required
+								/>
+								{formik.touched.collectorfullname &&
+								formik.errors.collectorfullname ? (
+									<div className="error">
+										{formik.errors.collectorfullname}
+									</div>
+								) : null}
+							</div>
+							<div className="logistics-quotation-small-input-group">
+								<label>Collector's phone number</label>
+								<input
+									className="logistics-input-fields"
+									type="text"
+									placeholder="Enter collector's phone number"
+									name="collectortel"
+									onChange={formik.handleChange}
+									onBlur={formik.handleBlur}
+									value={formik.values.collectortel}
+									required
+								/>
+								{formik.touched.collectortel &&
+								formik.errors.collectortel ? (
+									<div className="error">
+										{formik.errors.collectortel}
+									</div>
+								) : null}
+							</div>
+							<div className="logistics-quotation-small-input-group">
+								<label>Collector's address</label>
+								<input
+									className="logistics-input-fields"
+									type="text"
+									placeholder="Enter collector's address"
+									name="collectoraddress"
+									onChange={formik.handleChange}
+									onBlur={formik.handleBlur}
+									value={formik.values.collectoraddress}
+									required
+								/>
+								{formik.touched.collectoraddress &&
+								formik.errors.collectoraddress ? (
+									<div className="error">
+										{formik.errors.collectoraddress}
+									</div>
+								) : null}
+							</div>
+							<div className="logistics-quotation-small-input-group">
+								<label>Name of the Item</label>
+								<input
+									className="logistics-input-fields"
+									type="text"
+									placeholder="Enter the name of the item to be shipped"
+									name="itemsname"
+									onChange={formik.handleChange}
+									onBlur={formik.handleBlur}
+									value={formik.values.itemsname}
+									required
+								/>
+								{formik.touched.itemsname &&
+								formik.errors.itemsname ? (
+									<div className="error">
+										{formik.errors.itemsname}
 									</div>
 								) : null}
 							</div>
@@ -494,114 +561,11 @@ const LogisticsFormsContent = ({setModalIsOpen}) => {
 								) : null}
 							</div>
 							<div className="logistics-quotation-small-input-group">
-								<label>ID number</label>
-								<input
-									className="logistics-input-fields"
-									type="text"
-									placeholder="Your ID number..."
-									name="idno"
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									value={formik.values.idno}
-									required
-								/>
-								{formik.touched.idno && formik.errors.idno ? (
-									<div className="error">
-										{formik.errors.idno}
-									</div>
-								) : null}
-							</div>
-							<div className="logistics-quotation-small-input-group">
-								<label> Pieces </label>
-								<input
-									className="logistics-input-fields"
-									type="number"
-									placeholder="pieces"
-									name="pieces"
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									value={formik.values.pieces}
-									required
-								/>
-								{formik.touched.pieces && formik.errors.pieces ? (
-									<div className="error">
-										{formik.errors.pieces}
-									</div>
-								) : null}
-							</div>
-							<div className="logistics-quotation-small-input-group">
-								<label>Departure date</label>
+								<label>Estimated Arrival Date</label>
 								<input
 									className="logistics-input-fields"
 									type="date"
-									placeholder="DEparture date..."
-									name="departuredate"
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									value={formik.values.departuredate}
-									required
-								/>
-								{formik.touched.departuredate &&
-								formik.errors.departuredate ? (
-									<div className="error">
-										{formik.errors.departuredate}
-									</div>
-								) : null}
-							</div>
-							<div className="logistics-quotation-small-input-group">
-								<label>Time in</label>
-								<input
-									className="logistics-input-fields"
-									type="time"
-									placeholder="Time in..."
-									name="departuretime"
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									value={formik.values.departuretime}
-									required
-								/>
-								{formik.touched.departuretime &&
-								formik.errors.departuretime ? (
-									<div className="error">
-										{formik.errors.departuretime}
-									</div>
-								) : null}
-							</div>
-							<div className="logistics-quotation-small-input-group">
-								<label>Logistics mode</label>
-								<select
-									type="text"
-									name="logisticstype"
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									value={formik.values.logisticstype}
-									required>
-									<option
-										value=""
-										disabled
-										label="Please select an option"
-									/>
-									<option
-										value="land"
-										label="Land"
-										defaultValue
-									/>
-									<option value="sea" label="Sea" />
-									<option value="air" label="Air" />
-								</select>
-								{formik.touched.logisticstype &&
-								formik.errors.logisticstype ? (
-									<div className="error">
-										{formik.errors.logisticstype}
-									</div>
-								) : null}
-							</div>
-							<div className="logistics-quotation-small-input-group">
-								<label>Arrival date</label>
-								<input
-									className="logistics-input-fields"
-									type="date"
-									placeholder="Arrival date..."
+									placeholder="Enter the estimated arrival date"
 									name="arrivaldate"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
@@ -616,43 +580,7 @@ const LogisticsFormsContent = ({setModalIsOpen}) => {
 								) : null}
 							</div>
 							<div className="logistics-quotation-small-input-group">
-								<label>Comodity quality</label>
-								<input
-									className="logistics-input-fields"
-									type="text"
-									placeholder="Comodity quality..."
-									name="quality"
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									value={formik.values.quality}
-									required
-								/>
-								{formik.touched.quality && formik.errors.quality ? (
-									<div className="error">
-										{formik.errors.quality}
-									</div>
-								) : null}
-							</div>
-							<div className="logistics-quotation-small-input-group">
-								<label>Track number</label>
-								<input
-									className="logistics-input-fields"
-									type="text"
-									placeholder="Track number"
-									name="itemtrackno"
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									value={formik.values.itemtrackno}
-									required
-								/>
-								{formik.touched.itemtrackno && formik.errors.itemtrackno ? (
-									<div className="error">
-										{formik.errors.itemtrackno}
-									</div>
-								) : null}
-							</div>
-							<div className="logistics-quotation-small-input-group">
-								<label>Arrival time</label>
+								<label>Estimated Arrival Time</label>
 								<input
 									className="logistics-input-fields"
 									type="time"
@@ -670,221 +598,156 @@ const LogisticsFormsContent = ({setModalIsOpen}) => {
 								) : null}
 							</div>
 							<div className="logistics-quotation-small-input-group">
-								<label>Time events</label>
-								<input
-									className="logistics-input-fields"
-									type="time"
-									placeholder="Time events"
-									name="timeevents"
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									value={formik.values.timeevents}
-									required
-								/>
-								{formik.touched.timeevents &&
-								formik.errors.timeevents ? (
-									<div className="error">
-										{formik.errors.timeevents}
-									</div>
-								) : null}
-							</div>
-							<div className="logistics-quotation-small-input-group">
-								<label>Unit</label>
+								<label>Mode Of Transport</label>
 								<input
 									className="logistics-input-fields"
 									type="text"
-									placeholder="Unit eg bags"
-									name="unit"
+									placeholder="Enter the mode of transport"
+									name="logisticstype"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
-									value={formik.values.unit}
-									required
+									value={formik.values.logisticstype}
 								/>
-								{formik.touched.unit && formik.errors.unit ? (
+								{formik.touched.logisticstype &&
+								formik.errors.logisticstype ? (
 									<div className="error">
-										{formik.errors.unit}
+										{formik.errors.logisticstype}
 									</div>
 								) : null}
 							</div>
 							<div className="logistics-quotation-small-input-group">
-								<label>Collected by</label>
+								<label>Items Weight</label>
 								<input
 									className="logistics-input-fields"
-									type="text"
-									placeholder="Colledted by"
-									name="collectedby"
+									type="number"
+									placeholder="Enter the weight of the item"
+									name="itemsweight"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
-									value={formik.values.collectedby}
+									value={formik.values.itemsweight}
 									required
 								/>
-								{formik.touched.collectedby &&
-								formik.errors.collectedby ? (
+								{formik.touched.itemsweight && formik.errors.itemsweight ? (
 									<div className="error">
-										{formik.errors.collectedby}
+										{formik.errors.itemsweight}
 									</div>
 								) : null}
 							</div>
 							<div className="logistics-quotation-small-input-group">
-								<label>Collector's phone number</label>
-								<input
-									className="logistics-input-fields"
-									type="text"
-									placeholder="Collector's phone number"
-									name="collectortel"
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									value={formik.values.collectortel}
-									required
-								/>
-								{formik.touched.collectortel &&
-								formik.errors.collectortel ? (
-									<div className="error">
-										{formik.errors.collectortel}
-									</div>
-								) : null}
-							</div>
-							<div className="logistics-quotation-small-input-group">
-								<label>Collector's address</label>
-								<input
-									className="logistics-input-fields"
-									type="text"
-									placeholder="Collector's address"
-									name="collectoraddress"
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									value={formik.values.collectoraddress}
-									required
-								/>
-								{formik.touched.collectoraddress &&
-								formik.errors.collectoraddress ? (
-									<div className="error">
-										{formik.errors.collectoraddress}
-									</div>
-								) : null}
-							</div>
-							<div className="logistics-quotation-small-input-group">
-								<label>Product</label>
-								<input
-									className="logistics-input-fields"
-									type="text"
-									placeholder="Product item"
-									name="product"
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									value={formik.values.product}
-									required
-								/>
-								{formik.touched.product && formik.errors.product ? (
-									<div className="error">
-										{formik.errors.product}
-									</div>
-								) : null}
-							</div>
-							<div className="logistics-quotation-small-input-group">
-								<label>Status</label>
+								<label>Weight unit</label>
 								<select
 									type="text"
-									name="status"
+									name="itemsweightunit"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
-									value={formik.values.status}
+									value={formik.values.itemsweightunit}
 									required>
 									<option
 										value=""
 										disabled
 										label="Please select an option"
 									/>
-									<option
-										value="pending"
-										label="pending"
-										defaultValue
-									/>
-									<option value="success" label="Success" />
-									<option value="failed" label="failed" />
+									<option value="kilograms" label="Kilograms" />
+									<option value="tonnes" label="Tonnes" />
+									<option value="pounds" label="pounds" />
+									<option value="grams" label="grams" />
+									{/* <option value="l" label="Liters" />
+									<option value="gal" label="Gallons" /> */}
 								</select>
-								{formik.touched.status && formik.errors.status ? (
+								{formik.touched.itemsweightunit &&
+								formik.errors.itemsweightunit ? (
 									<div className="error">
-										{formik.errors.status}
+										{formik.errors.itemsweightunit}
 									</div>
 								) : null}
 							</div>
+
+							
 							<div className="logistics-quotation-small-input-group">
-								<label>Is logistics completed</label>
-								<input
-									className="logistics-input-fields"
-									type="checkbox"
-									placeholder="Arrival time, If not arrived leave blank"
-									name="completed"
+								<label>Product type</label>
+								<select
+									type="text"
+									name="itemsproducttype"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
-									value={formik.values.completed}
-								/>
-								{formik.touched.completed &&
-								formik.errors.completed ? (
+									value={formik.values.itemsproducttype}
+									required>
+									<option value="" disabled label="Please select an option"/>
+									<option value="solid" label="Solid"/>
+									<option value="liquid" label="Liquid" />
+									<option value="gas" label="Gas" />
+									<option value="plasma" label="Plasma" />
+								</select>
+								{formik.touched.itemsproducttype &&
+								formik.errors.itemsproducttype ? (
 									<div className="error">
-										{formik.errors.completed}
+										{formik.errors.itemsproducttype}
 									</div>
 								) : null}
 							</div>
+					
 							<div className="logistics-quotation-small-input-group">
-								<label>Current location</label>
+								<label> Number Of Items </label>
+								<input
+									className="logistics-input-fields"
+									type="number"
+									placeholder="enter the number of items"
+									name="itemspieces"
+									onChange={formik.handleChange}
+									onBlur={formik.handleBlur}
+									value={formik.values.itemspieces}
+									required
+								/>
+								{formik.touched.itemspieces && formik.errors.itemspieces ? (
+									<div className="error">
+										{formik.errors.itemspieces}
+									</div>
+								) : null}
+							</div>
+					
+							<div className="logistics-quotation-small-input-group">
+								<label> Item's Qualility </label>
 								<input
 									className="logistics-input-fields"
 									type="text"
-									placeholder="Current location"
-									name="currentlocation"
+									placeholder="enter the number of items"
+									name="itemsquality"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
-									value={formik.values.currentlocation}
+									value={formik.values.itemsquality}
 									required
 								/>
-								{formik.touched.currentlocation &&
-								formik.errors.currentlocation ? (
+								{formik.touched.itemsquality && formik.errors.itemsquality ? (
 									<div className="error">
-										{formik.errors.currentlocation}
+										{formik.errors.itemsquality}
 									</div>
 								) : null}
 							</div>
+
 							<div className="logistics-quotation-small-input-group">
-								<label>Current date</label>
+								<label>Pieces Grouped unit</label>
 								<input
 									className="logistics-input-fields"
-									type="date"
-									placeholder="Current location"
-									name="currentdate"
+									type="text"
+									placeholder="Unit eg bags"
+									name="quantifiableunit"
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
-									value={formik.values.currentdate}
+									value={formik.values.quantifiableunit}
 									required
 								/>
-								{formik.touched.currentdate &&
-								formik.errors.currentdate ? (
+								{formik.touched.quantifiableunit && formik.errors.quantifiableunit ? (
 									<div className="error">
-										{formik.errors.currentdate}
+										{formik.errors.quantifiableunit}
 									</div>
 								) : null}
 							</div>
-						</div>
 
-						<div className="contact-textarea">
-							<label>Notes</label>
-							<textarea
-								type="text"
-								name="notes"
-								placeholder="Little notess eg weight, size, color, etc"
-								onChange={formik.handleChange}
-								onBlur={formik.handleBlur}
-								value={formik.values.notes}
-								required
-							/>
-							{formik.touched.notes && formik.errors.notes ? (
-								<div className="error">{formik.errors.notes}</div>
-							) : null}
+							
 						</div>
 
 						<br />
-						<button type="submit">
+						<button onClick={(formik) => formik.handleSubmit} type="submit">
 							Submit <FontAwesomeIcon icon={faPaperPlane} />
 						</button>
 						<button type="submit" onClick={() => setModalIsOpen(false)}>

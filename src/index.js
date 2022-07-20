@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import axios from "axios";
 
-// axios.defaults.baseURL = "https://rhinojohnbackend.herokuapp.com/api/"
 
 ReactDOM.render(
   <React.StrictMode>
