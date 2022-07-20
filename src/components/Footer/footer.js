@@ -105,7 +105,7 @@ const Footer = () => {
 							
 							<li className="footer-li">
 								<FontAwesomeIcon icon={faPhoneAlt} />
-								07211432145 
+								0711432145 
 							</li>
 							<li className="footer-li">
 								<FontAwesomeIcon icon={faMailBulk} />

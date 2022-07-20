@@ -102,7 +102,7 @@ const AirFooter = () => {
 							</li>
 							<li className="air-footer-li">
 								<FontAwesomeIcon icon={faPhoneAlt} />
-								07211432145 
+								0711432145 
 							</li>
 							<li className="air-footer-li">
 								<FontAwesomeIcon icon={faMailBulk} />
